@@ -19,12 +19,12 @@ public class Pokemon {
         this.name = name;
     }
 
-    public Integer getPokedexnr() {
-        return pokedexnr;
+    public Integer getId() {
+        return id;
     }
 
-    public void setPokedexnr(Integer pokedexnr) {
-        this.pokedexnr = pokedexnr;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Boolean getMegaEvolution() {
@@ -53,7 +53,7 @@ public class Pokemon {
 
     private List<Typ>String;
     private String name;
-    private Integer pokedexnr;
+    private Integer id;
     private Boolean megaEvolution;
     private Double groesse;
     private String trainer;
