@@ -14,7 +14,7 @@ import java.util.List;
 
 
 @Path("type")
-public class TypeService {
+public class TypService {
     /**
      * reads a list of all books
      * @return
