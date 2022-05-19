@@ -1,9 +1,9 @@
 package ch.bzz.pokemon.service;
 
+import ch.bzz.pokemon.data.DataHandler;
 import ch.bzz.pokemon.model.Pokemon;
 import ch.bzz.pokemon.model.Typ;
 
-import javax.activation.DataHandler;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -22,8 +22,8 @@ public class TypService {
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listType(){
-        List<Typ> typList = DataHandler.getInstance().readAllType();
+    public Response listTyp(){
+        List<Typ> typList = DataHandler.getInstance().readAllTyp();
         return Response
                 .status(200)
                 .entity(typList)

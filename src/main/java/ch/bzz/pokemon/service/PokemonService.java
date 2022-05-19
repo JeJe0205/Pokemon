@@ -1,7 +1,7 @@
 package ch.bzz.pokemon.service;
 
+import ch.bzz.pokemon.data.DataHandler;
 import ch.bzz.pokemon.model.Pokemon;
-import javax.activation.DataHandler;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -21,11 +21,11 @@ public class PokemonService {
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listPokemon(){
-        List<Pokemon> pokemonList = DataHandler.getInstance().readAllPokemon();
+    public Response listPokemons(){
+        List<Pokemon> pokemon = DataHandler.getInstance().readAllPokemons();
         return Response
                 .status(200)
-                .entity(pokemonList)
+                .entity(pokemon)
                 .build();
     }
 
