@@ -4,6 +4,7 @@ public class Trainer {
     private String name;
     private String vorname;
     private String ort;
+    private String trainerID;
 
     public String getName() {
         return name;

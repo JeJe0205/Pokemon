@@ -22,20 +22,20 @@ public class PokemonService {
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
     public Response listPokemons(){
-        List<Pokemon> pokemon = DataHandler.getInstance().readAllPokemons();
+        List<Pokemon> pokemonList = DataHandler.getInstance().readAllPokemons();
         return Response
                 .status(200)
-                .entity(pokemon)
+                .entity(pokemonList)
                 .build();
     }
 
     @GET
-    @Path("pokemon")
+    @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
     public Response readPokemon(
-            @QueryParam("uuid") String bookUUID
+            @QueryParam("id") String pokemonID
     ){
-        Pokemon pokemon = DataHandler.getInstance().readPokemonByUUID(bookUUID);
+        Pokemon pokemon = DataHandler.getInstance().readPokemonByID(pokemonID);
         return Response
                 .status(200)
                 .entity(pokemon)

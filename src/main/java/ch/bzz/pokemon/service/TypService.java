@@ -13,7 +13,7 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 
 
-@Path("type")
+@Path("pokemon")
 public class TypService {
     /**
      * reads a list of all books
@@ -22,7 +22,7 @@ public class TypService {
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listTyp(){
+    public Response listTypes(){
         List<Typ> typList = DataHandler.getInstance().readAllTypes();
         return Response
                 .status(200)
@@ -30,17 +30,17 @@ public class TypService {
                 .build();
     }
 
-//    @GET
-//    @Path("type")
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public Response readTyp(
-//            @QueryParam("uuid") String bookUUID
-//    ){
-//        Typ typ = DataHandler.getInstance().readTypByUUID(bookUUID);
-//        return Response
-//                .status(200)
-//                .entity(typ)
-//                .build();
-//    }
+    @GET
+    @Path("read")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response readTyp(
+            @QueryParam("id") String typID
+    ){
+        Typ typ = DataHandler.getInstance().readTypByID(typID);
+        return Response
+                .status(200)
+                .entity(typ)
+                .build();
+    }
 }
 

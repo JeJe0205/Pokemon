@@ -13,9 +13,9 @@ import javax.ws.rs.core.Response;
 public class TestService {
 
     @GET
-    @Path("test")
+    @Path("list")
     @Produces(MediaType.TEXT_PLAIN)
-    public Response test() {
+    public Response listTyp() {
 
         return Response
                 .status(200)

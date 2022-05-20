@@ -1,8 +1,8 @@
 package ch.bzz.pokemon.service;
 
 import ch.bzz.pokemon.data.DataHandler;
-import ch.bzz.pokemon.model.Pokemon;
 import ch.bzz.pokemon.model.Trainer;
+
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -13,7 +13,7 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 
 
-@Path("trainer")
+@Path("pokemon")
 public class TrainerService {
     /**
      * reads a list of all books
@@ -22,7 +22,7 @@ public class TrainerService {
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listTrainer(){
+    public Response listTrainers(){
         List<Trainer> trainerList = DataHandler.getInstance().readAllTrainers();
         return Response
                 .status(200)
@@ -30,16 +30,17 @@ public class TrainerService {
                 .build();
     }
 
-//    @GET
-//    @Path("trainer")
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public Response readTrainer(
-//            @QueryParam("uuid") String bookUUID
-//    ){ Trainer trainer = DataHandler.getInstance().readTrainerByUUID(bookUUID);
-//        return Response
-//                .status(200)
-//                .entity(trainer)
-//                .build();
-//    }
+    @GET
+    @Path("read")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response readTyp(
+            @QueryParam("id") String trainerID
+    ){
+        Trainer trainer = DataHandler.getInstance().readTrainerByID(trainerID);
+        return Response
+                .status(200)
+                .entity(trainer)
+                .build();
+    }
 }
 

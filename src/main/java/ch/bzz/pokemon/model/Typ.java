@@ -19,4 +19,5 @@ public class Typ {
 
     private String name;
     private String schwaechen;
+    private String typID;
 }
