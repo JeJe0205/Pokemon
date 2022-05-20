@@ -17,7 +17,17 @@ public class Typ {
         this.schwaechen = schwaechen;
     }
 
+    public String getTypID() {
+        return typID;
+    }
+
+    public void setTypID(String typID) {
+        this.typID = typID;
+    }
+
+
     private String name;
     private String schwaechen;
     private String typID;
+
 }

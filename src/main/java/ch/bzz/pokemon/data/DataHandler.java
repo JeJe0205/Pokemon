@@ -1,4 +1,4 @@
-package ch.bzz.booklist.data;
+package ch.bzz.pokemon.data;
 
 import ch.bzz.pokemon.model.Pokemon;
 import ch.bzz.pokemon.model.Typ;
@@ -30,8 +30,8 @@ public class DataHandler {
         readTypJSON();
         setPokemonList(new ArrayList<>());
         readPokemonJSON();
-        setTrainerList(new ArrayList<>());
-        readTrainerJSON();
+        //setTrainerList(new ArrayList<>());
+        //readTrainerJSON();
     }
 
     /**
@@ -53,11 +53,7 @@ public class DataHandler {
         return getPokemonList();
     }
 
-    /**
-     * reads a book by its uuid
-     * @param bookUUID
-     * @return the Book (null=not found)
-     */
+
     public Pokemon readPokemonByID(String pokemonID) {
         Pokemon pokemon = null;
         for (Pokemon entry : getPokemonList()) {
@@ -77,14 +73,10 @@ public class DataHandler {
         return getTypList();
     }
 
-    /**
-     * reads a publisher by its uuid
-     * @param publisherUUID
-     * @return the Publisher (null=not found)
-     */
+
     public Typ readTypByID(String typID) {
         Typ typ = null;
-        for (Typ entry : getPublisherList()) {
+        for (Typ entry : getTypList()) {
             if (entry.getTypID().equals(typID)) {
                 typ = entry;
             }
@@ -124,7 +116,7 @@ public class DataHandler {
             ObjectMapper objectMapper = new ObjectMapper();
             Typ[] publishers = objectMapper.readValue(jsonData, Typ[].class);
             for (Typ typ : types) {
-                getPublisherList().add(typ);
+                getTypList().add(typ);
             }
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -157,11 +149,6 @@ public class DataHandler {
         return typList;
     }
 
-    /**
-     * sets publisherList
-     *
-     * @param publisherList the value to set
-     */
     private void setTypList(List<Typ> typList) {
         this.typList = typList;
     }
