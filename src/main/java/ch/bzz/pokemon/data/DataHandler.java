@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -18,9 +19,9 @@ import java.util.List;
  */
 public class DataHandler {
     private static DataHandler instance = null;
-    private List<Pokemon> pokemon;
-    private List<Typ> typ;
-    private List<Trainer> trainer;
+    private List<Pokemon> pokemons;
+    private List<Typ> types;
+    private List<Trainer> trainers;
 
     /**
      * private constructor defeats instantiation
@@ -32,6 +33,15 @@ public class DataHandler {
         readPokemonJSON();
         setTrainer(new ArrayList<>());
         readTrainerJSON();
+    }
+
+    private void setTrainer(ArrayList<Object> objects) {
+    }
+
+    private void readPokemonJSON() {
+    }
+
+    private void readtypJSON() {
     }
 
     /**
@@ -49,19 +59,14 @@ public class DataHandler {
      * reads all books
      * @return list of books
      */
-    public List<Pokemon> readAllBooks() {
-        return getPokemon();
+    public List<Pokemon> readAllPokemons() {
+        return getPokemonList();
     }
 
-    /**
-     * reads a book by its uuid
-     * @param bookUUID
-     * @return the Book (null=not found)
-     */
     public Pokemon readPokemonByUUID(String id) {
         Pokemon pokemon = null;
-        for (Pokemon entry : getpokemon()) {
-            if (entry.getid().equals(id)) {
+        for (Pokemon entry : getPokemonList()) {
+            if (entry.getId().equals(id)) {
                 pokemon = entry;
             }
         }
@@ -72,29 +77,28 @@ public class DataHandler {
      * reads all Publishers
      * @return list of publishers
      */
-    public List<Typ> readAllPublishers() {
+    public List<Trainer> readAllTrainers() {
 
-        return gettyp();
+        return getTrainerList();
     }
 
     /**
      * reads a publisher by its uuid
-     * @param publisherUUID
      * @return the Publisher (null=not found)
      */
-    public Typ readPublisherByUUID(String publisherUUID) {
-        Typ typ = null;
-        for (Typ entry : gettyp()) {
-            if (entry.gettyp().equals(typ)) {
-                typ = entry;
-            }
-        }
-        return typ;
-    }
+//    public Typ readPublisherByUUID(String publisherUUID) {
+//        Typ typ = null;
+//        for (Typ entry : gettyp()) {
+//            if (entry.gettyp().equals(typ)) {
+//                typ = entry;
+//            }
+//        }
+//        return typ;
+//    }
 
     public List<Trainer> readAllPublishers() {
 
-        return gettrainer();
+        return getTrainerList();
     }
 
     /**
@@ -102,15 +106,15 @@ public class DataHandler {
      * @param trainerid
      * @return the Publisher (null=not found)
      */
-    public Trainer readPublisherByUUID(String publisherUUID) {
-        Trainer trainer = null;
-        for (Trainer entry : gettrainer()) {
-            if (entry.gettrainer().equals(trainer)) {
-                trainer = entry;
-            }
-        }
-        return trainer;
-    }
+//    public Trainer readPublisherByUUID(String publisherUUID) {
+//        Trainer trainer = null;
+//        for (Trainer entry : getTrainerList()) {
+//            if (entry.gettrainer().equals(trainer)) {
+//                trainer = entry;
+//            }
+//        }
+//        return trainer;
+//    }
 
     /**
      * reads the books from the JSON-file
@@ -123,12 +127,14 @@ public class DataHandler {
             );
             ObjectMapper objectMapper = new ObjectMapper();
             Pokemon[] pokemons = objectMapper.readValue(jsonData, Pokemon[].class);
-            for (Pokemon pokemon1 : pokemons) {
-                getpokemon().add(pokemon);
-            }
+            this.pokemons.addAll(Arrays.asList(pokemons));
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+    }
+
+    private Pokemon getpokemon() {
+        return null;
     }
 
     /**
@@ -144,7 +150,7 @@ public class DataHandler {
             ObjectMapper objectMapper = new ObjectMapper();
             Typ[] typs = objectMapper.readValue(jsonData, Typ[].class);
             for (Typ typ : typs) {
-                getPublisherList().add(typ);
+                getTypes().add(typ);
             }
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -163,28 +169,32 @@ public class DataHandler {
             ObjectMapper objectMapper = new ObjectMapper();
             Trainer[] trainers = objectMapper.readValue(jsonData, Trainer[].class);
             for (Trainer trainer : trainers) {
-                getPublisherList().add(trainer);
+                getTrainerList().add(trainer);
             }
         } catch (IOException ex) {
             ex.printStackTrace();
         }
     }
+
+    private List<Trainer> getTrainerList() {
+        return trainers;
+    }
+
     /**
-     * gets bookList
+     * gets TODO
      *
      * @return value of bookList
      */
-    private List<Pokemon> getpokeon() {
-        return pokemon;
+    private List<Pokemon> getPokemonList() {
+        return pokemons;
     }
 
     /**
      * sets bookList
      *
-     * @param bookList the value to set
      */
-    private void setPokemon(List<Pokemon> bookList) {
-        this.pokemon = pokemon;
+    private void setPokemon(List<Pokemon> pokemons) {
+        this.pokemons = pokemons;
     }
 
     /**
@@ -192,18 +202,20 @@ public class DataHandler {
      *
      * @return value of publisherList
      */
-    private List<Typ> gettyp() {
-        return typ;
+    private List<Typ> getTypes() {
+        return types;
     }
 
     /**
      * sets publisherList
      *
-     * @param publisherList the value to set
      */
-    private void setTyp(List<Typ> publisherList) {
-        this.typ = typ;
+    private void setTyp(List<Typ> typeList) {
+        this.types = types;
     }
 
 
+    public List<Typ> readAllTypes() {
+        return types;
+    }
 }

@@ -23,23 +23,23 @@ public class TrainerService {
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
     public Response listTrainer(){
-        List<Trainer> trainerList = DataHandler.getInstance().readAllTrainer();
+        List<Trainer> trainerList = DataHandler.getInstance().readAllTrainers();
         return Response
                 .status(200)
-                .entity(tainerList)
+                .entity(trainerList)
                 .build();
     }
 
-    @GET
-    @Path("trainer")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response readTrainer(
-            @QueryParam("uuid") String bookUUID
-    ){ Trainer trainer = DataHandler.getInstance().readTrainerByUUID(bookUUID);
-        return Response
-                .status(200)
-                .entity(trainer)
-                .build();
-    }
+//    @GET
+//    @Path("trainer")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public Response readTrainer(
+//            @QueryParam("uuid") String bookUUID
+//    ){ Trainer trainer = DataHandler.getInstance().readTrainerByUUID(bookUUID);
+//        return Response
+//                .status(200)
+//                .entity(trainer)
+//                .build();
+//    }
 }
 

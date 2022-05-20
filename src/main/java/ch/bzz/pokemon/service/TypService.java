@@ -23,24 +23,24 @@ public class TypService {
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
     public Response listTyp(){
-        List<Typ> typList = DataHandler.getInstance().readAllTyp();
+        List<Typ> typList = DataHandler.getInstance().readAllTypes();
         return Response
                 .status(200)
                 .entity(typList)
                 .build();
     }
 
-    @GET
-    @Path("type")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response readTyp(
-            @QueryParam("uuid") String bookUUID
-    ){
-        Typ typ = DataHandler.getInstance().readTypByUUID(bookUUID);
-        return Response
-                .status(200)
-                .entity(typ)
-                .build();
-    }
+//    @GET
+//    @Path("type")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public Response readTyp(
+//            @QueryParam("uuid") String bookUUID
+//    ){
+//        Typ typ = DataHandler.getInstance().readTypByUUID(bookUUID);
+//        return Response
+//                .status(200)
+//                .entity(typ)
+//                .build();
+//    }
 }
 
