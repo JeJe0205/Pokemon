@@ -1,6 +1,10 @@
 package ch.bzz.pokemon.model;
 
 public class Typ {
+    private String name;
+    private String schwaechen;
+    private String typID;
+
     public String getName() {
         return name;
     }
@@ -25,9 +29,5 @@ public class Typ {
         this.typID = typID;
     }
 
-
-    private String name;
-    private String schwaechen;
-    private String typID;
 
 }

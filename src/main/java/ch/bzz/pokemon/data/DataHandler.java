@@ -30,8 +30,8 @@ public class DataHandler {
         readTypJSON();
         setPokemonList(new ArrayList<>());
         readPokemonJSON();
-        //setTrainerList(new ArrayList<>());
-        //readTrainerJSON();
+        setTrainerList(new ArrayList<>());
+        readTrainerJSON();
     }
 
     /**
@@ -68,7 +68,7 @@ public class DataHandler {
      * reads all Publishers
      * @return list of publishers
      */
-    public List<Typ> readAllPublishers() {
+    public List<Typ> readAllTypes() {
 
         return getTypList();
     }
@@ -84,6 +84,22 @@ public class DataHandler {
         return typ;
     }
 
+    public List<Trainer> readAllTrainers() {
+
+        return getTrainerList();
+    }
+
+
+    public Trainer readTrainerByID(String trainerID) {
+        Trainer trainer = null;
+        for (Trainer entry : getTrainerList()) {
+            if (entry.getTrainerID().equals(trainerID)) {
+                trainer = entry;
+            }
+        }
+        return trainer;
+    }
+
     /**
      * reads the books from the JSON-file
      */
@@ -94,7 +110,7 @@ public class DataHandler {
                     Paths.get(path)
             );
             ObjectMapper objectMapper = new ObjectMapper();
-            Pokemon[] books = objectMapper.readValue(jsonData, Pokemon[].class);
+            Pokemon[] pokemons = objectMapper.readValue(jsonData, Pokemon[].class);
             for (Pokemon pokemon : pokemons) {
                 getPokemonList().add(pokemon);
             }
@@ -114,9 +130,27 @@ public class DataHandler {
                     )
             );
             ObjectMapper objectMapper = new ObjectMapper();
-            Typ[] publishers = objectMapper.readValue(jsonData, Typ[].class);
+            Typ[] types = objectMapper.readValue(jsonData, Typ[].class);
             for (Typ typ : types) {
                 getTypList().add(typ);
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+
+    private void readTrainerJSON() {
+        try {
+            byte[] jsonData = Files.readAllBytes(
+                    Paths.get(
+                            Config.getProperty("trainerJSON")
+                    )
+            );
+            ObjectMapper objectMapper = new ObjectMapper();
+            Trainer[] trainers = objectMapper.readValue(jsonData, Trainer[].class);
+            for (Trainer trainer : trainers) {
+                getTrainerList().add(trainer);
             }
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -151,6 +185,14 @@ public class DataHandler {
 
     private void setTypList(List<Typ> typList) {
         this.typList = typList;
+    }
+
+    private List<Trainer> getTrainerList() {
+        return trainerList;
+    }
+
+    private void setTrainerList(List<Trainer> trainerList) {
+        this.trainerList = trainerList;
     }
 
 

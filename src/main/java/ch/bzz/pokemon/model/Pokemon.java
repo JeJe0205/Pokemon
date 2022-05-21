@@ -4,6 +4,13 @@ import java.util.List;
 
 public class Pokemon {
 
+    private String pokemonID;
+    private String name;
+    private Boolean megaEvolution;
+    private Double groesse;
+    private Trainer trainer;
+    private Typ typ;
+
     public java.lang.String getName() {
         return name;
     }
@@ -11,7 +18,6 @@ public class Pokemon {
     public void setName(java.lang.String name) {
         this.name = name;
     }
-
 
     public Boolean getMegaEvolution() {
         return megaEvolution;
@@ -45,20 +51,9 @@ public class Pokemon {
         this.trainer = trainer;
     }
 
+    public String getPokemonID() { return pokemonID; }
 
-    private Typ typ;
-    private String name;
+    public void setPokemonID(String pokemonID) { this.pokemonID = pokemonID; }
 
-    public String getPokemonID() {
-        return pokemonID;
-    }
 
-    public void setPokemonID(String pokemonID) {
-        this.pokemonID = pokemonID;
-    }
-
-    private String pokemonID;
-    private Boolean megaEvolution;
-    private Double groesse;
-    private Trainer trainer;
 }

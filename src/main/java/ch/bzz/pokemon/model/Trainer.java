@@ -4,6 +4,15 @@ public class Trainer {
     private String name;
     private String vorname;
     private String ort;
+
+    public String getTrainerID() {
+        return trainerID;
+    }
+
+    public void setTrainerID(String trainerID) {
+        this.trainerID = trainerID;
+    }
+
     private String trainerID;
 
     public String getName() {
