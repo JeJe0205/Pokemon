@@ -34,10 +34,7 @@ public class DataHandler {
         readTrainerJSON();
     }
 
-    /**
-     * gets the only instance of this class
-     * @return
-     */
+   
     public static DataHandler getInstance() {
         if (instance == null)
             instance = new DataHandler();
@@ -165,12 +162,8 @@ public class DataHandler {
         return pokemonList;
     }
 
-    /**
-     * sets bookList
-     *
-     * @param bookList the value to set
-     */
-    private void setPokemonList(List<Pokemon> bookList) {
+
+    private void setPokemonList(List<Pokemon> pokemonList) {
         this.pokemonList = pokemonList;
     }
 
