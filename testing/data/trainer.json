@@ -1,0 +1,14 @@
+[
+  { "id": "1",
+    "name": "Ash",
+    "ort" : "Alabastia"
+  },
+  { "id": "2",
+    "name": "Misty",
+    "ort" : "Azuria City"
+  },
+  { "id": "3",
+    "name": "Rocko",
+    "ort" : "Marmoria City"
+  }
+]
