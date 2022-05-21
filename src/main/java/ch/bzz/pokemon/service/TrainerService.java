@@ -13,7 +13,7 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 
 
-@Path("pokemon")
+@Path("trainer")
 public class TrainerService {
     /**
      * reads a list of all books

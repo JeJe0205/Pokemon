@@ -34,7 +34,6 @@ public class DataHandler {
         readTrainerJSON();
     }
 
-   
     public static DataHandler getInstance() {
         if (instance == null)
             instance = new DataHandler();
