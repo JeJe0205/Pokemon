@@ -1,85 +1,71 @@
-[{
-  "id": 1,
-  "name": "Bisasam",
+[
+  {
+  "pokemonID": "1",
+  "pokemon": "Bisasam",
   "megaEvolution": "false",
   "groesse" : "0.7",
   "trainerID" :"1",
-  "typID": [
-    "4",
-    "10"
-  ]
-},
+  "typID": "4"
+  },
   {
-    "id": 2,
-    "name": "Bisaknosp",
+    "pokemonID": "2",
+    "pokemon": "Bisaknosp",
     "megaEvolution": "false",
     "groesse" : "1.0",
-    "trainerID" :"",
-    "typID": [
-      "4",
-      "10"
-    ]
+    "trainerID" :"1",
+    "typID": "4"
   },
   {
-    "id": 3,
-    "name": "Bisaflor",
+    "pokemonID": "3",
+    "pokemon": "Bisaflor",
     "megaEvolution": "true",
     "groesse" : "2.0",
-    "trainerID" :"",
-    "typID": [
-      "4",
-      "10"
-    ]
+    "trainerID" :"1",
+    "typID": "4"
   },
   {
-    "id": 4,
-    "name": "Glumanda",
+    "pokemonID": "4",
+    "pokemon": "Glumanda",
     "megaEvolution": "false",
     "groesse" : "0.6",
     "trainerID" :"1",
     "typID" :"8"
   },
   {
-    "id": 5,
-    "name": "Glutexo",
+    "pokemonID": "5",
+    "pokemon": "Glutexo",
     "megaEvolution": "false",
     "groesse" : "1.1",
     "trainerID" :"1",
     "typID" :"8"
   },
   {
-    "id": 6,
-    "name": "Glurak",
+    "pokemonID": "6",
+    "pokemon": "Glurak",
     "megaEvolution": "false",
     "groesse" : "1.7",
     "trainerID" :"1",
-    "typID": [
-      "3",
-      "8"
-    ]
+    "typID": "3"
   },
   {
-    "id": 7,
-    "name": "Schiggy",
+    "pokemonID": "7",
+    "pokemon": "Schiggy",
     "megaEvolution": "false",
     "groesse" : "0.5",
-    "trainerID": [
-      "1",
-      "3"
-    ],
+    "trainerID": "1",
     "typID" :"9"
   },
   {
-    "id": 8,
-    "name": "Schillok",
+    "pokemonID": "8",
+    "pokemon": "Schillok",
     "megaEvolution": "false",
     "groesse" : "1.0",
     "trainerID" :"3",
     "typID" :"9"
   },
   {
-    "id": 9,
-    "name": "Turtok",
+    "pokemonID": "9",
+    "pokemon": "Turtok",
     "megaEvolution": "false",
     "groesse" : "1.6",
     "trainerID" :"3",

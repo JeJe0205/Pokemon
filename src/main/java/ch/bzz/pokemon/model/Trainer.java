@@ -2,7 +2,7 @@ package ch.bzz.pokemon.model;
 
 public class Trainer {
     private String trainerID;
-    private String name;
+    private String trainer;
     private String ort;
 
     public String getTrainerID() {
@@ -14,11 +14,11 @@ public class Trainer {
     }
 
     public String getVorname() {
-        return name;
+        return trainer;
     }
 
     public void setVorname(String vorname) {
-        this.name = vorname;
+        this.trainer = vorname;
     }
 
     public String getOrt() {

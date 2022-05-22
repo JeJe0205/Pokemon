@@ -1,22 +1,20 @@
 package ch.bzz.pokemon.model;
 
-import java.util.List;
-
 public class Pokemon {
 
     private String pokemonID;
-    private String name;
+    private String pokemon;
     private Boolean megaEvolution;
     private Double groesse;
     private Trainer trainer;
     private Typ typ;
 
-    public java.lang.String getName() {
-        return name;
+    public java.lang.String getPokemon() {
+        return pokemon;
     }
 
-    public void setName(java.lang.String name) {
-        this.name = name;
+    public void setPokemon(java.lang.String pokemon) {
+        this.pokemon = pokemon;
     }
 
     public Boolean getMegaEvolution() {

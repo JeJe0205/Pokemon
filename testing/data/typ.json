@@ -1,17 +1,22 @@
 [
-  { "id": "3",
-    "name": "Flug"
+  {
+    "typID": "3",
+    "typ": "Flug"
   },
-  { "id": "4",
-    "name": "Gift"
+  {
+    "typID": "4",
+    "typ": "Gift"
   },
-  { "id": "8",
-    "name": "Feuer"
+  {
+    "typID": "8",
+    "typ": "Feuer"
   },
-  { "id": "9",
-    "name": "Wasser"
+  {
+    "typID": "9",
+    "typ": "Wasser"
   },
-  { "id": "10",
-    "name": "Pflanze"
+  {
+    "typID": "10",
+    "typ": "Pflanze"
   }
 ]

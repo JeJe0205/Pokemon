@@ -1,15 +1,15 @@
 package ch.bzz.pokemon.model;
 
 public class Typ {
-    private String name;
+    private String typ;
     private String typID;
 
-    public String getName() {
-        return name;
+    public String getTyp() {
+        return typ;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTyp(String typ) {
+        this.typ = typ;
     }
 
     public String getTypID() {
@@ -19,6 +19,5 @@ public class Typ {
     public void setTypID(String typID) {
         this.typID = typID;
     }
-
 
 }
