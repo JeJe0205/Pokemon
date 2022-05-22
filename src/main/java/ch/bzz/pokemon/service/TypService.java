@@ -1,7 +1,6 @@
 package ch.bzz.pokemon.service;
 
 import ch.bzz.pokemon.data.DataHandler;
-import ch.bzz.pokemon.model.Pokemon;
 import ch.bzz.pokemon.model.Typ;
 
 import javax.ws.rs.GET;
