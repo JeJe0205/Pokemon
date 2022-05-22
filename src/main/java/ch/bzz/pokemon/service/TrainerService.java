@@ -15,10 +15,6 @@ import java.util.List;
 
 @Path("trainer")
 public class TrainerService {
-    /**
-     * reads a list of all books
-     * @return
-     */
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)

@@ -152,25 +152,15 @@ public class DataHandler {
             ex.printStackTrace();
         }
     }
-    /**
-     * gets bookList
-     *
-     * @return value of bookList
-     */
+
     private List<Pokemon> getPokemonList() {
         return pokemonList;
     }
-
 
     private void setPokemonList(List<Pokemon> pokemonList) {
         this.pokemonList = pokemonList;
     }
 
-    /**
-     * gets publisherList
-     *
-     * @return value of publisherList
-     */
     private List<Typ> getTypList() {
         return typList;
     }

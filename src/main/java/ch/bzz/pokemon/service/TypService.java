@@ -14,10 +14,7 @@ import java.util.List;
 
 @Path("typ")
 public class TypService {
-    /**
-     * reads a list of all books
-     * @return
-     */
+
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
