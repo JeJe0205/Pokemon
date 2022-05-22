@@ -5,20 +5,20 @@ public class Trainer {
     private String trainer;
     private String ort;
 
+    public String getTrainer() {
+        return trainer;
+    }
+
+    public void setTrainer(String trainer) {
+        this.trainer = trainer;
+    }
+
     public String getTrainerID() {
         return trainerID;
     }
 
     public void setTrainerID(String trainerID) {
         this.trainerID = trainerID;
-    }
-
-    public String getVorname() {
-        return trainer;
-    }
-
-    public void setVorname(String vorname) {
-        this.trainer = vorname;
     }
 
     public String getOrt() {
