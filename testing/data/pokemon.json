@@ -33,7 +33,7 @@
   },
   {
     "pokemonID": "5",
-    "pokemon": "Glutexo",
+    "name": "Glutexo",
     "megaEvolution": "false",
     "groesse": "1.1",
     "trainerID": "1",

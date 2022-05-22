@@ -43,10 +43,6 @@ public class Pokemon {
         this.typ = typ;
     }
 
-
-
-    private String pokemonID;
-
     public String getName() {
         return name;
     }
@@ -55,6 +51,7 @@ public class Pokemon {
         this.name = name;
     }
 
+    private String pokemonID;
     private String name;
     private Boolean megaEvolution;
     private Double groesse;
