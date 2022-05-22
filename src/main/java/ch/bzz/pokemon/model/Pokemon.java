@@ -58,6 +58,4 @@ public class Pokemon {
     private Trainer trainer;
     private Typ typ;
 
-
-
 }

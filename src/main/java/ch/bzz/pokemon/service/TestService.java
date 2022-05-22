@@ -13,7 +13,7 @@ import javax.ws.rs.core.Response;
 public class TestService {
 
     @GET
-    @Path("list")
+    @Path("test")
     @Produces(MediaType.TEXT_PLAIN)
     public Response listTyp() {
 
