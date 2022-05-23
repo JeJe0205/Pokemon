@@ -1,0 +1,22 @@
+[
+  {
+    "typID": "3",
+    "typ": "Flug"
+  },
+  {
+    "typID": "4",
+    "typ": "Gift"
+  },
+  {
+    "typID": "8",
+    "typ": "Feuer"
+  },
+  {
+    "typID": "9",
+    "typ": "Wasser"
+  },
+  {
+    "typID": "10",
+    "typ": "Pflanze"
+  }
+]
