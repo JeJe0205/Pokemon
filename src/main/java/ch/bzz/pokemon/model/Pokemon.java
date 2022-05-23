@@ -1,14 +1,55 @@
 package ch.bzz.pokemon.model;
 
-public class Pokemon {
+import ch.bzz.pokemon.data.DataHandler;
 
+public class Pokemon {
+    private Typ typ;
+    private Trainer trainer;
 
     private String pokemonID;
     private String name;
     private Boolean megaEvolution;
     private Double groesse;
-    private String trainerID;
-    private String typID;
+
+    public String getTypID() {
+        return getTyp().getTypID();
+    }
+
+    public void setTypID(String typID) {
+        setTyp( new Typ());
+        Typ typ = DataHandler.getInstance().readTypByID(typID);
+        getTyp().setTypID(typID);
+        getTyp().setTyp(typ.getTyp());
+
+    }
+
+    public Typ getTyp() {
+        return typ;
+    }
+
+    public void setTyp(Typ typ) {
+        this.typ = typ;
+    }
+
+    public String getTrainerID() {
+        return getTrainer().getTrainerID();
+    }
+
+    public void setTrainerID(String trainerID) {
+        setTrainer( new Trainer());
+        Trainer trainer = DataHandler.getInstance().readTrainerByID(trainerID);
+        getTrainer().setTrainerID(trainerID);
+        getTrainer().setTrainer(trainer.getTrainer());
+
+    }
+
+    public Trainer getTrainer() {
+        return trainer;
+    }
+
+    public void setTrainer(Trainer trainer) {
+        this.trainer= trainer;
+    }
 
     public Boolean getMegaEvolution() {
         return megaEvolution;
@@ -42,19 +83,5 @@ public class Pokemon {
         this.name = name;
     }
 
-    public String getTrainerID() {
-        return trainerID;
-    }
 
-    public void setTrainerID(String trainerID) {
-        this.trainerID = trainerID;
-    }
-
-    public String getTypID() {
-        return typID;
-    }
-
-    public void setTypID(String typID) {
-        this.typID = typID;
-    }
 }
