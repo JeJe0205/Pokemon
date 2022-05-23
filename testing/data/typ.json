@@ -1,13 +1,5 @@
 [
   {
-    "typID": "3",
-    "typ": "Flug"
-  },
-  {
-    "typID": "4",
-    "typ": "Gift"
-  },
-  {
     "typID": "8",
     "typ": "Feuer"
   },

@@ -42,6 +42,7 @@ public class Pokemon {
         this.name = name;
     }
 
+
     public String getTrainerID() {
         return trainerID;
     }
@@ -57,4 +58,6 @@ public class Pokemon {
     public void setTypID(String typID) {
         this.typID = typID;
     }
+
+
 }
