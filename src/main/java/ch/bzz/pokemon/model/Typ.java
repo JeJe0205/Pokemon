@@ -4,6 +4,7 @@ public class Typ {
     private String typ;
     private String typID;
 
+
     public String getTyp() {
         return typ;
     }

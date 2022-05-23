@@ -2,14 +2,13 @@ package ch.bzz.pokemon.model;
 
 public class Pokemon {
 
-    public String getPokemonID() {
-        return pokemonID;
-    }
 
-    public void setPokemonID(String pokemonID) {
-        this.pokemonID = pokemonID;
-    }
-
+    private String pokemonID;
+    private String name;
+    private Boolean megaEvolution;
+    private Double groesse;
+    private String trainerID;
+    private String typID;
 
     public Boolean getMegaEvolution() {
         return megaEvolution;
@@ -27,20 +26,12 @@ public class Pokemon {
         this.groesse = groesse;
     }
 
-    public Trainer getTrainer() {
-        return trainer;
+    public String getPokemonID() {
+        return pokemonID;
     }
 
-    public void setTrainer(Trainer trainer) {
-        this.trainer = trainer;
-    }
-
-    public Typ getTyp() {
-        return typ;
-    }
-
-    public void setTyp(Typ typ) {
-        this.typ = typ;
+    public void setPokemonID(String pokemonID) {
+        this.pokemonID = pokemonID;
     }
 
     public String getName() {
@@ -51,11 +42,19 @@ public class Pokemon {
         this.name = name;
     }
 
-    private String pokemonID;
-    private String name;
-    private Boolean megaEvolution;
-    private Double groesse;
-    private Trainer trainer;
-    private Typ typ;
+    public String getTrainerID() {
+        return trainerID;
+    }
 
+    public void setTrainerID(String trainerID) {
+        this.trainerID = trainerID;
+    }
+
+    public String getTypID() {
+        return typID;
+    }
+
+    public void setTypID(String typID) {
+        this.typID = typID;
+    }
 }

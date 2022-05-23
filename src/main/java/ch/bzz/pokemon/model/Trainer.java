@@ -5,6 +5,7 @@ public class Trainer {
     private String trainer;
     private String ort;
 
+
     public String getTrainer() {
         return trainer;
     }
