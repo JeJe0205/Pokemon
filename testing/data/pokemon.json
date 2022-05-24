@@ -14,6 +14,14 @@
     "groesse" : 1.0,
     "trainerID": "1",
     "typID": "8"
+  },
+  {
+    "pokemonID": "3",
+    "name": "Bisaflor",
+    "megaEvolution": true,
+    "groesse": 2.0,
+    "trainerID": "1",
+    "typID": "10"
   }
 ]
 
