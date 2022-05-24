@@ -29,7 +29,7 @@ public class PokemonService {
                 .build();
     }
     /**
-     * reads pokemon by id
+     * reads
      * @return
      */
     @GET
@@ -39,8 +39,14 @@ public class PokemonService {
             @QueryParam("id") String pokemonID
     ){
         Pokemon pokemon = DataHandler.getInstance().readPokemonByID(pokemonID);
+        int httpsStatus;
+        if (pokemon == null){
+            httpsStatus = 404;
+        }else {
+            httpsStatus = 288;
+        }
         return Response
-                .status(200)
+                .status(httpsStatus)
                 .entity(pokemon)
                 .build();
     }
