@@ -39,8 +39,14 @@ public class TrainerService {  /**
             @QueryParam("id") String trainerID
     ){
         Trainer trainer = DataHandler.getInstance().readTrainerByID(trainerID);
+        int httpsStatus;
+        if (trainer == null){
+            httpsStatus = 404;
+        }else {
+            httpsStatus = 288;
+        }
         return Response
-                .status(200)
+                .status(httpsStatus)
                 .entity(trainer)
                 .build();
     }

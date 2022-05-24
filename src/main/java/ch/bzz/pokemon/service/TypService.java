@@ -39,8 +39,14 @@ public class TypService {
             @QueryParam("id") String typID
     ){
         Typ typ = DataHandler.getInstance().readTypByID(typID);
+        int httpsStatus;
+        if (typ == null){
+            httpsStatus = 404;
+        }else {
+            httpsStatus = 288;
+        }
         return Response
-                .status(200)
+                .status(httpsStatus)
                 .entity(typ)
                 .build();
     }
