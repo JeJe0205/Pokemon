@@ -35,7 +35,7 @@ public class DataHandler {
     }
     /**
      * gets the only instance of this class
-     * @return
+     * @return instance
      */
     public static DataHandler getInstance() {
         if (instance == null)

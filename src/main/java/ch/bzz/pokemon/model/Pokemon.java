@@ -1,7 +1,7 @@
 package ch.bzz.pokemon.model;
 
 import ch.bzz.pokemon.data.DataHandler;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * a Pakemon
