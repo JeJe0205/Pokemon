@@ -4,16 +4,16 @@
     "name": "Bisasam",
     "megaEvolution": false,
     "groesse": 0.7,
-    "trainerID": ["1","2"],
-    "typID": ["8","10"]
+    "trainerID": "1",
+    "typID": "8"
   },
   {
     "pokemonID": "2",
     "name": "Bisaknosp",
     "megaEvolution": false,
     "groesse" : 1.0,
-    "trainerID": ["1","2"],
-    "typID": ["8","10"]
+    "trainerID": "1",
+    "typID": "8"
   }
 ]
 

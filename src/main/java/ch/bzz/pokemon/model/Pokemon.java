@@ -7,9 +7,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  * a Pakemon
  */
 public class Pokemon {
-    @JsonIgnore
     private Typ typ;
-    @JsonIgnore
     private Trainer trainer;
 
     private String pokemonID;
