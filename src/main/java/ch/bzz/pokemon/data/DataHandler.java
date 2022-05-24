@@ -33,7 +33,10 @@ public class DataHandler {
         setTrainerList(new ArrayList<>());
         readTrainerJSON();
     }
-
+    /**
+     * gets the only instance of this class
+     * @return
+     */
     public static DataHandler getInstance() {
         if (instance == null)
             instance = new DataHandler();
@@ -42,14 +45,18 @@ public class DataHandler {
 
 
     /**
-     * reads all books
-     * @return list of books
+     * reads all pokemos
+     * @return list of pokemons
      */
     public List<Pokemon> readAllPokemons() {
         return getPokemonList();
     }
 
-
+    /**
+     * reads a pokemon by its id
+     * @param pokemonID
+     * @return the Pokemon (null=not found)
+     */
     public Pokemon readPokemonByID(String pokemonID) {
         Pokemon pokemon = null;
         for (Pokemon entry : getPokemonList()) {
@@ -61,15 +68,19 @@ public class DataHandler {
     }
 
     /**
-     * reads all Publishers
-     * @return list of publishers
+     * reads all Types
+     * @return list of types
      */
     public List<Typ> readAllTypes() {
 
         return getTypList();
     }
 
-
+    /**
+     * reads a Typ by its id
+     * @param typID
+     * @return the Typ (null=not found)
+     */
     public Typ readTypByID(String typID) {
         Typ typ = null;
         for (Typ entry : getTypList()) {
@@ -80,12 +91,20 @@ public class DataHandler {
         return typ;
     }
 
+    /**
+     * reads all Trainers
+     * @return list of trainers
+     */
     public List<Trainer> readAllTrainers() {
 
         return getTrainerList();
     }
 
-
+    /**
+     * reads a trainer by its id
+     * @param trainerID
+     * @return the Trainer (null=not found)
+     */
     public Trainer readTrainerByID(String trainerID) {
         Trainer trainer = null;
         for (Trainer entry : getTrainerList()) {
@@ -97,7 +116,7 @@ public class DataHandler {
     }
 
     /**
-     * reads the books from the JSON-file
+     * reads the pokemons from the JSON-file
      */
     private void readPokemonJSON() {
         try {
@@ -116,7 +135,7 @@ public class DataHandler {
     }
 
     /**
-     * reads the publishers from the JSON-file
+     * reads the types from the JSON-file
      */
     private void readTypJSON() {
         try {
@@ -136,6 +155,9 @@ public class DataHandler {
     }
 
 
+    /**
+     * reads the trainers from the JSON-file
+     */
     private void readTrainerJSON() {
         try {
             byte[] jsonData = Files.readAllBytes(
@@ -153,26 +175,55 @@ public class DataHandler {
         }
     }
 
+    /**
+     * gets pokemonList
+     *
+     * @return value of pokemonList
+     */
     private List<Pokemon> getPokemonList() {
         return pokemonList;
     }
+    /**
+     * sets pokemonList
+     *
+     * @param pokemonList the value to set
+     */
 
     private void setPokemonList(List<Pokemon> pokemonList) {
         this.pokemonList = pokemonList;
     }
+    /**
+     * gets typLIst
+     *
+     * @return typList the value to set
+     */
 
     private List<Typ> getTypList() {
         return typList;
     }
+    /**
+     * sets typList
+     *
+     * @param typList the value to set
+     */
 
     private void setTypList(List<Typ> typList) {
         this.typList = typList;
     }
+    /**
+     * gets trainerList
+     *
+     * @return value of trainerList
+     */
 
     private List<Trainer> getTrainerList() {
         return trainerList;
     }
-
+    /**
+     * sets trainerList
+     *
+     * @param trainerList the value to set
+     */
     private void setTrainerList(List<Trainer> trainerList) {
         this.trainerList = trainerList;
     }

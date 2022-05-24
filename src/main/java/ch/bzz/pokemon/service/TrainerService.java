@@ -14,7 +14,10 @@ import java.util.List;
 
 
 @Path("trainer")
-public class TrainerService {
+public class TrainerService {  /**
+ * reads a list of all trainers
+ * @return
+ */
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
@@ -25,7 +28,10 @@ public class TrainerService {
                 .entity(trainerList)
                 .build();
     }
-
+    /**
+     * reads trainer by id
+     * @return
+     */
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
