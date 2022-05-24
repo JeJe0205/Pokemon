@@ -17,7 +17,7 @@ public class Pokemon {
 
     /**
      * gets the typID from the Typ-object
-     * @return
+     * @return typID
      */
     public String getTypID() {
         return getTyp().getTypID();
@@ -53,7 +53,7 @@ public class Pokemon {
     }
     /**
      * gets the trainerID from the Trainer-object
-     * @return
+     * @return trainerID
      */
     public String getTrainerID() {
         return getTrainer().getTrainerID();
