@@ -29,8 +29,9 @@ public class TypService {
                 .build();
     }
     /**
-     * reads typ by id
-     * @return
+     * reads typ by ID
+     * @param typID
+     * @return typID
      */
     @GET
     @Path("read")

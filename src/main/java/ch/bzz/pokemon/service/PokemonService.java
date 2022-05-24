@@ -16,7 +16,7 @@ import java.util.List;
 public class PokemonService {
     /**
      * reads a list of all pokemons
-     * @return
+     * @return list of all pokemons
      */
     @GET
     @Path("list")
@@ -28,10 +28,7 @@ public class PokemonService {
                 .entity(pokemonList)
                 .build();
     }
-    /**
-     * reads
-     * @return
-     */
+
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)

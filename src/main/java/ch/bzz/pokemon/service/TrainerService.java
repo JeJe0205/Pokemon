@@ -16,7 +16,7 @@ import java.util.List;
 @Path("trainer")
 public class TrainerService {  /**
  * reads a list of all trainers
- * @return
+ * @return list of all trainers
  */
     @GET
     @Path("list")
@@ -28,9 +28,11 @@ public class TrainerService {  /**
                 .entity(trainerList)
                 .build();
     }
+
     /**
-     * reads trainer by id
-     * @return
+     * reads trainer by ID
+     * @param trainerID
+     * @return trainerID
      */
     @GET
     @Path("read")
