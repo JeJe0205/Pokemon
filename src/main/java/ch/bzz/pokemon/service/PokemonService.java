@@ -14,7 +14,10 @@ import java.util.List;
 
 @Path("pokemon")
 public class PokemonService {
-
+    /**
+     * reads a list of all pokemons
+     * @return
+     */
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
@@ -25,7 +28,10 @@ public class PokemonService {
                 .entity(pokemonList)
                 .build();
     }
-
+    /**
+     * reads pokemon by id
+     * @return
+     */
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)

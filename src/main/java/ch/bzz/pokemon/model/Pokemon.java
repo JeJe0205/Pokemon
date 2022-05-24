@@ -1,18 +1,21 @@
 package ch.bzz.pokemon.model;
 
 import ch.bzz.pokemon.data.DataHandler;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * a Pakemon
  */
 public class Pokemon {
+    @JsonIgnore
     private Typ typ;
+    @JsonIgnore
     private Trainer trainer;
 
     private String pokemonID;
     private String name;
-    private Boolean megaEvolution;
-    private Double groesse;
+    private boolean megaEvolution;
+    private double groesse;
 
     /**
      * gets the typID from the Typ-object
@@ -90,11 +93,11 @@ public class Pokemon {
      *
      * @return value of trainer
      */
-    public Boolean getMegaEvolution() {
+    public boolean isMegaEvolution() {
         return megaEvolution;
     }
 
-    public void setMegaEvolution(Boolean megaEvolution) {
+    public void setMegaEvolution(boolean megaEvolution) {
         this.megaEvolution = megaEvolution;
     }
     /**
@@ -102,7 +105,7 @@ public class Pokemon {
      *
      * @return value of groesse
      */
-    public Double getGroesse() {
+    public double getGroesse() {
         return groesse;
     }
     /**
@@ -110,7 +113,7 @@ public class Pokemon {
      *
      * @param groesse the value to set
      */
-    public void setGroesse(Double groesse) {
+    public void setGroesse(double groesse) {
         this.groesse = groesse;
     }
     /**

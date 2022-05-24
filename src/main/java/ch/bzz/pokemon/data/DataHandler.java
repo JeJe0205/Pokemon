@@ -33,7 +33,10 @@ public class DataHandler {
         setTrainerList(new ArrayList<>());
         readTrainerJSON();
     }
-
+    /**
+     * gets the only instance of this class
+     * @return
+     */
     public static DataHandler getInstance() {
         if (instance == null)
             instance = new DataHandler();

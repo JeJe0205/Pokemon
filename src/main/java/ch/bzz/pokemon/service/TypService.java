@@ -14,7 +14,10 @@ import java.util.List;
 
 @Path("typ")
 public class TypService {
-
+    /**
+     * reads a list of all types
+     * @return
+     */
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
@@ -25,7 +28,10 @@ public class TypService {
                 .entity(typList)
                 .build();
     }
-
+    /**
+     * reads typ by id
+     * @return
+     */
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
