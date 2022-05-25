@@ -22,7 +22,7 @@ public class TypService {
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
     public Response listTypes(){
-        List<Typ> typList = DataHandler.getInstance().readAllTypes();
+        List<Typ> typList = DataHandler.readAllTypes();
         return Response
                 .status(200)
                 .entity(typList)
@@ -39,7 +39,7 @@ public class TypService {
     public Response readTyp(
             @QueryParam("id") String typID
     ){
-        Typ typ = DataHandler.getInstance().readTypByID(typID);
+        Typ typ = DataHandler.readTypByID(typID);
         int httpsStatus;
         if (typ == null){
             httpsStatus = 404;

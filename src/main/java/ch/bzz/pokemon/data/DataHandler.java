@@ -5,9 +5,13 @@ import ch.bzz.pokemon.model.Typ;
 import ch.bzz.pokemon.model.Trainer;
 import ch.bzz.pokemon.service.Config;
 
+import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 
-import java.io.IOException;
+import javax.xml.crypto.Data;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -18,37 +22,37 @@ import java.util.List;
  */
 public class DataHandler {
     private static DataHandler instance = null;
-    private List<Pokemon> pokemonList;
-    private List<Typ> typList;
-    private List<Trainer> trainerList;
+    private static List<Pokemon> pokemonList;
+    private static List<Typ> typList;
+    private static List<Trainer> trainerList;
 
     /**
      * private constructor defeats instantiation
      */
     private DataHandler() {
-        setTypList(new ArrayList<>());
+        /*setTypList(new ArrayList<>());
         readTypJSON();
         setPokemonList(new ArrayList<>());
         readPokemonJSON();
         setTrainerList(new ArrayList<>());
-        readTrainerJSON();
+        readTrainerJSON();*/
     }
     /**
      * gets the only instance of this class
      * @return instance
      */
-    public static DataHandler getInstance() {
+    /*public static DataHandler getInstance() {
         if (instance == null)
             instance = new DataHandler();
         return instance;
-    }
+    }*/
 
 
     /**
      * reads all pokemos
      * @return list of pokemons
      */
-    public List<Pokemon> readAllPokemons() {
+    public static List<Pokemon> readAllPokemons() {
         return getPokemonList();
     }
 
@@ -57,7 +61,7 @@ public class DataHandler {
      * @param pokemonID
      * @return the Pokemon (null=not found)
      */
-    public Pokemon readPokemonByID(String pokemonID) {
+    public static Pokemon readPokemonByID(String pokemonID) {
         Pokemon pokemon = null;
         for (Pokemon entry : getPokemonList()) {
             if (entry.getPokemonID().equals(pokemonID)) {
@@ -68,10 +72,43 @@ public class DataHandler {
     }
 
     /**
+     * inserts a new book into the bookList
+     *
+     * @param pokemon the book to be saved
+     */
+    public static void insertPokemon(Pokemon pokemon) {
+        getPokemonList().add(pokemon);
+        writePokemonJSON();
+    }
+
+    /**
+     * updates the bookList
+     */
+    public static void updatePokemon() {
+        writePokemonJSON();
+    }
+
+    /**
+     * deletes a book identified by the bookUUID
+     * @param pokemonID  the key
+     * @return  success=true/false
+     */
+    public static boolean deletePokemon(String pokemonID) {
+        Pokemon pokemon = readPokemonByID(pokemonID);
+        if (pokemon != null) {
+            getPokemonList().remove(pokemon);
+            writePokemonJSON();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
      * reads all Types
      * @return list of types
      */
-    public List<Typ> readAllTypes() {
+    public static List<Typ> readAllTypes() {
 
         return getTypList();
     }
@@ -81,7 +118,7 @@ public class DataHandler {
      * @param typID
      * @return the Typ (null=not found)
      */
-    public Typ readTypByID(String typID) {
+    public static Typ readTypByID(String typID) {
         Typ typ = null;
         for (Typ entry : getTypList()) {
             if (entry.getTypID().equals(typID)) {
@@ -90,6 +127,40 @@ public class DataHandler {
         }
         return typ;
     }
+
+    /**
+     * inserts a new book into the bookList
+     *
+     * @param pokemon the book to be saved
+     */
+    public static void insertTyp(Typ typ) {
+        getPokemonList().add(pokemon);
+        writePokemonJSON();
+    }
+
+    /**
+     * updates the bookList
+     */
+    public static void updatePokemon() {
+        writePokemonJSON();
+    }
+
+    /**
+     * deletes a book identified by the bookUUID
+     * @param pokemonID  the key
+     * @return  success=true/false
+     */
+    public static boolean deletePokemon(String pokemonID) {
+        Pokemon pokemon = readPokemonByID(pokemonID);
+        if (pokemon != null) {
+            getPokemonList().remove(pokemon);
+            writePokemonJSON();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
     /**
      * reads all Trainers
@@ -105,7 +176,7 @@ public class DataHandler {
      * @param trainerID
      * @return the Trainer (null=not found)
      */
-    public Trainer readTrainerByID(String trainerID) {
+    public static Trainer readTrainerByID(String trainerID) {
         Trainer trainer = null;
         for (Trainer entry : getTrainerList()) {
             if (entry.getTrainerID().equals(trainerID)) {
@@ -118,7 +189,7 @@ public class DataHandler {
     /**
      * reads the pokemons from the JSON-file
      */
-    private void readPokemonJSON() {
+    private static void readPokemonJSON() {
         try {
             String path = Config.getProperty("pokemonJSON");
             byte[] jsonData = Files.readAllBytes(
@@ -129,6 +200,25 @@ public class DataHandler {
             for (Pokemon pokemon : pokemons) {
                 getPokemonList().add(pokemon);
             }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    /**
+     * writes the bookList to the JSON-file
+     */
+    private static void writePokemonJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String bookPath = Config.getProperty("pokemonJSON");
+        try {
+            fileOutputStream = new FileOutputStream(bookPath);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, getPokemonList());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -180,7 +270,11 @@ public class DataHandler {
      *
      * @return value of pokemonList
      */
-    private List<Pokemon> getPokemonList() {
+    private static List<Pokemon> getPokemonList() {
+        if (pokemonList == null) {
+            setPokemonList(new ArrayList<>());
+            readPokemonJSON();
+        }
         return pokemonList;
     }
     /**
@@ -189,8 +283,8 @@ public class DataHandler {
      * @param pokemonList the value to set
      */
 
-    private void setPokemonList(List<Pokemon> pokemonList) {
-        this.pokemonList = pokemonList;
+    private static void setPokemonList(List<Pokemon> pokemonList) {
+        DataHandler.pokemonList = pokemonList;
     }
     /**
      * gets typLIst
@@ -198,7 +292,7 @@ public class DataHandler {
      * @return typList the value to set
      */
 
-    private List<Typ> getTypList() {
+    private static List<Typ> getTypList() {
         return typList;
     }
     /**
@@ -216,7 +310,7 @@ public class DataHandler {
      * @return value of trainerList
      */
 
-    private List<Trainer> getTrainerList() {
+    private static List<Trainer> getTrainerList() {
         return trainerList;
     }
     /**

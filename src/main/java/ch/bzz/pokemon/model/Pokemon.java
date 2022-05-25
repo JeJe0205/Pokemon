@@ -20,6 +20,7 @@ public class Pokemon {
      * @return typID
      */
     public String getTypID() {
+        if (getTypID()== null) return null;
         return getTyp().getTypID();
     }
 
@@ -29,7 +30,7 @@ public class Pokemon {
      */
     public void setTypID(String typID) {
         setTyp( new Typ());
-        Typ typ = DataHandler.getInstance().readTypByID(typID);
+        Typ typ = DataHandler.readTypByID(typID);
         getTyp().setTypID(typID);
         getTyp().setTyp(typ.getTyp());
 
@@ -64,7 +65,7 @@ public class Pokemon {
      */
     public void setTrainerID(String trainerID) {
         setTrainer( new Trainer());
-        Trainer trainer = DataHandler.getInstance().readTrainerByID(trainerID);
+        Trainer trainer = DataHandler.readTrainerByID(trainerID);
         getTrainer().setTrainerID(trainerID);
         getTrainer().setTrainer(trainer.getTrainer());
 
