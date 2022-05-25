@@ -131,30 +131,30 @@ public class DataHandler {
     /**
      * inserts a new book into the bookList
      *
-     * @param pokemon the book to be saved
+     * @param typ the book to be saved
      */
     public static void insertTyp(Typ typ) {
-        getPokemonList().add(pokemon);
-        writePokemonJSON();
+        getTypList().add(typ);
+        writeTypJSON();
     }
 
     /**
      * updates the bookList
      */
-    public static void updatePokemon() {
-        writePokemonJSON();
+    public static void updateTyp() {
+        writeTypJSON();
     }
 
     /**
      * deletes a book identified by the bookUUID
-     * @param pokemonID  the key
+     * @param typID  the key
      * @return  success=true/false
      */
-    public static boolean deletePokemon(String pokemonID) {
-        Pokemon pokemon = readPokemonByID(pokemonID);
-        if (pokemon != null) {
-            getPokemonList().remove(pokemon);
-            writePokemonJSON();
+    public static boolean deleteTyp(String typID) {
+        Typ typ = readTypByID(typID);
+        if (typ != null) {
+            getTypList().remove(typ);
+            writeTypJSON();
             return true;
         } else {
             return false;
@@ -184,6 +184,39 @@ public class DataHandler {
             }
         }
         return trainer;
+    }
+
+    /**
+     * inserts a new book into the bookList
+     *
+     * @param trainer the book to be saved
+     */
+    public static void insertTrainer(Trainer trainer) {
+        getTrainerList().add(trainer);
+        writeTrainerJSON();
+    }
+
+    /**
+     * updates the bookList
+     */
+    public static void updateTrainer() {
+        writeTrainerJSON();
+    }
+
+    /**
+     * deletes a book identified by the bookUUID
+     * @param trainerID  the key
+     * @return  success=true/false
+     */
+    public static boolean deleteTrainer(String trainerID) {
+        Trainer trainer = readTrainerByID(trainerID);
+        if (trainer != null) {
+            getTrainerList().remove(trainer);
+            writeTrainerJSON();
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -246,6 +279,26 @@ public class DataHandler {
 
 
     /**
+     * writes the bookList to the JSON-file
+     */
+    private static void writeTypJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String bookPath = Config.getProperty("typJSON");
+        try {
+            fileOutputStream = new FileOutputStream(bookPath);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, getTypList());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+
+    /**
      * reads the trainers from the JSON-file
      */
     private void readTrainerJSON() {
@@ -260,6 +313,25 @@ public class DataHandler {
             for (Trainer trainer : trainers) {
                 getTrainerList().add(trainer);
             }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    /**
+     * writes the bookList to the JSON-file
+     */
+    private static void writeTrainerJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String bookPath = Config.getProperty("trainerJSON");
+        try {
+            fileOutputStream = new FileOutputStream(bookPath);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, getTrainerList());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
