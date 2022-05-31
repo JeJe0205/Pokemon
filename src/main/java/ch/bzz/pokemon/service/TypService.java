@@ -1,9 +1,9 @@
 package ch.bzz.pokemon.service;
 
 import ch.bzz.pokemon.data.DataHandler;
-import ch.bzz.pokemon.model.Pokemon;
 import ch.bzz.pokemon.model.Typ;
 import com.sun.xml.internal.bind.v2.model.core.ID;
+
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -53,11 +53,6 @@ public class TypService {
 
     /**
      *
-     * @param name
-     * @param megaEvolution
-     * @param groesse
-     * @param trainerID
-     * @param typID
      * @return
      */
     @POST
@@ -91,13 +86,10 @@ public class TypService {
         int httpStatus = 200;
         Typ typ = DataHandler.readTypByID(typID);
         if (typ != null){
-            pokemon.setName(name);
-            pokemon.setMegaEvolution(megaEvolution);
-            pokemon.setGroesse(groesse);
-            pokemon.setTrainerID(trainerID);
-            pokemon.setTypID(typID);
+            typ.setTyp(typ);
+            typ.setTypID(typID);
 
-            DataHandler.updatePokemon();
+            DataHandler.updateTyp();
         }else {
             httpStatus = 410;
         }
@@ -109,17 +101,17 @@ public class TypService {
 
     /**
      * delets a pokemon indentified by its uuid
-     * @param pokemonID the key
+     * @param typID the key
      * @return Response
      */
     @DELETE
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
-    public Response deletePokemon(
-            @QueryParam("id") String pokemonID
+    public Response deleteTyp(
+            @QueryParam("id") String typID
     ){
         int httpStatus = 200;
-        if (!DataHandler.deletePokemon(pokemonID)){
+        if (!DataHandler.deleteTyp(typID)){
             httpStatus = 410;
         }
         return Response

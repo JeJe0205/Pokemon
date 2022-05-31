@@ -2,15 +2,14 @@ package ch.bzz.pokemon.service;
 
 import ch.bzz.pokemon.data.DataHandler;
 import ch.bzz.pokemon.model.Pokemon;
-import com.sun.org.apache.xpath.internal.operations.Bool;
+
 import com.sun.xml.internal.bind.v2.model.core.ID;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.math.BigDecimal;
 import java.util.List;
-import java.util.UUID;
+
 
 
 @Path("pokemon")

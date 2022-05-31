@@ -166,7 +166,7 @@ public class DataHandler {
      * reads all Trainers
      * @return list of trainers
      */
-    public List<Trainer> readAllTrainers() {
+    public static List<Trainer> readAllTrainers() {
 
         return getTrainerList();
     }
