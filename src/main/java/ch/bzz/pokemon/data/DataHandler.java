@@ -374,7 +374,7 @@ public class DataHandler {
      */
 
     private void setTypList(List<Typ> typList) {
-        this.typList = typList;
+        typList = typList;
     }
     /**
      * gets trainerList
@@ -391,7 +391,7 @@ public class DataHandler {
      * @param trainerList the value to set
      */
     private void setTrainerList(List<Trainer> trainerList) {
-        this.trainerList = trainerList;
+        trainerList = trainerList;
     }
 
 

@@ -36,7 +36,7 @@ public class TrainerService {  /**
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response readTyp(
+    public Response readTrainer(
             @QueryParam("id") String trainerID
     ){
         Trainer trainer = DataHandler.readTrainerByID(trainerID);
@@ -53,6 +53,11 @@ public class TrainerService {  /**
     }
 
     /**
+     *
+     * @param trainer
+     * @param ort
+     * @param trainerID
+     * @return Response
      */
     @POST
     @Path("create")
@@ -76,6 +81,13 @@ public class TrainerService {  /**
                 .build();
     }
 
+    /**
+     *
+     * @param trainerID
+     * @param trainer
+     * @param ort
+     * @return Response
+     */
     @POST
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)

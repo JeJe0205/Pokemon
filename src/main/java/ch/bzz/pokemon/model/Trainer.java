@@ -8,7 +8,6 @@ public class Trainer {
     private String trainer;
     private String ort;
 
-
     /**
      * gets trainer
      *
@@ -65,4 +64,6 @@ public class Trainer {
     public void setOrt(String ort) {
         this.ort = ort;
     }
+
+
 }

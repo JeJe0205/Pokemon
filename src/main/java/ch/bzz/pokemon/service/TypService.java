@@ -1,6 +1,7 @@
 package ch.bzz.pokemon.service;
 
 import ch.bzz.pokemon.data.DataHandler;
+import ch.bzz.pokemon.model.Pokemon;
 import ch.bzz.pokemon.model.Typ;
 import com.sun.xml.internal.bind.v2.model.core.ID;
 
@@ -53,7 +54,9 @@ public class TypService {
 
     /**
      *
-     * @return
+     * @param typ
+     * @param typID
+     * @return Response
      */
     @POST
     @Path("create")
@@ -75,6 +78,12 @@ public class TypService {
                 .build();
     }
 
+    /**
+     *
+     * @param typID
+     * @param typ
+     * @return Response
+     */
     @POST
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
