@@ -61,11 +61,10 @@ public class TrainerService {  /**
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertTrainer(
-            @Valid @BeanParam Pokemon pokemon
+            @Valid @BeanParam Trainer trainer
           
     ){
-        Trainer trainer = new Trainer();
-
+        
         DataHandler.insertTrainer(trainer);
         return Response
                 .status(200)
@@ -75,25 +74,20 @@ public class TrainerService {  /**
 
     /**
      *
-     * @param trainerID
-     * @param trainerName
-     * @param ort
      * @return Response
      */
     @POST
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateTrainer(
-            @FormParam("trainerID") String trainerID,
-            @FormParam("trainer") String trainerName,
-            @FormParam("ort") String ort
+            @Valid @BeanParam Trainer trainer
     ){
         int httpStatus = 200;
-        Trainer trainer = DataHandler.readTrainerByID(trainerID);
-        if (trainer != null){
-            trainer.setTrainerID(trainerID);
-            trainer.setTrainer(trainerName);
-            trainer.setOrt(ort);
+        Trainer oldTrainer = DataHandler.readTrainerByID(trainer.getTrainerID());
+        if (oldTrainer != null){
+            oldTrainer.setTrainerID(trainer.getTrainerID());
+            oldTrainer.setTrainer(trainer.getTrainer());
+            oldTrainer.setOrt(trainer.getOrt());
 
 
             DataHandler.updateTrainer();

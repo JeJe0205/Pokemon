@@ -62,9 +62,8 @@ public class TypService {
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertTyp(
-            @Valid @BeanParam Pokemon pokemon
+            @Valid @BeanParam Typ typ
     ){
-        Typ typ = new Typ();
 
         DataHandler.insertTyp(typ);
         return Response
@@ -75,22 +74,19 @@ public class TypService {
 
     /**
      *
-     * @param typID
-     * @param typName
      * @return Response
      */
     @POST
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateTyp(
-            @FormParam("typID") String typID,
-            @FormParam("typ") String typName
+            @Valid @BeanParam Typ typ
 
     ){
         int httpStatus = 200;
-        Typ typ = DataHandler.readTypByID(typID);
-        if (typ != null){
-            typ.setTyp(typName);
+        Typ oldTyp = DataHandler.readTypByID(typ.getTypID());
+        if (oldTyp != null){
+            oldTyp.setTyp(typ.getTyp());
 
             DataHandler.updateTyp();
         }else {

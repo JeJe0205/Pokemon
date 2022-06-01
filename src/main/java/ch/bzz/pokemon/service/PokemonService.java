@@ -67,12 +67,6 @@ public class PokemonService {
 
     /**
      *
-     * @param pokemonID
-     * @param name
-     * @param megaEvolution
-     * @param groesse
-     * @param trainerID
-     * @param typID
      * @return Response
      */
 
@@ -80,25 +74,16 @@ public class PokemonService {
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
     public Response updatePokemon(
-            @FormParam("pokemonID") String pokemonID,
-            @FormParam("name") String name,
-            @FormParam("megaEvolution") Boolean megaEvolution,
-            @FormParam("groesse") Double groesse,
-            @FormParam("trainerID") String trainerID,
-            @FormParam("typID") String typID
+            @Valid @BeanParam Pokemon pokemon
     ){
         int httpStatus = 200;
-        Pokemon pokemon = DataHandler.readPokemonByID(pokemonID);
-        if (pokemon != null){
-            setAttributes(
-                    pokemon,
-                    name,
-                    megaEvolution,
-                    groesse,
-                    trainerID,
-                    typID
-
-            );
+        Pokemon oldPokemon = DataHandler.readPokemonByID(pokemon.getPokemonID());
+        if (oldPokemon != null){
+            oldPokemon.setName(pokemon.getName());
+            oldPokemon.setGroesse(pokemon.getGroesse());
+            oldPokemon.setMegaEvolution(pokemon.isMegaEvolution());
+            oldPokemon.setTrainerID(pokemon.getTrainerID());
+            oldPokemon.setTypID(pokemon.getTyp().getTypID());
 
             DataHandler.updatePokemon();
         }else {
