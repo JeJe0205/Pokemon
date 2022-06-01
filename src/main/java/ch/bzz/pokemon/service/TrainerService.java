@@ -1,10 +1,7 @@
 package ch.bzz.pokemon.service;
 
 import ch.bzz.pokemon.data.DataHandler;
-import ch.bzz.pokemon.model.Pokemon;
 import ch.bzz.pokemon.model.Trainer;
-import com.sun.xml.internal.bind.v2.model.core.ID;
-
 
 import javax.validation.Valid;
 import javax.ws.rs.*;
@@ -28,7 +25,6 @@ public class TrainerService {  /**
                 .entity(trainerList)
                 .build();
     }
-
     /**
      * reads trainer by ID
      * @param trainerID
@@ -64,7 +60,7 @@ public class TrainerService {  /**
             @Valid @BeanParam Trainer trainer
           
     ){
-        
+
         DataHandler.insertTrainer(trainer);
         return Response
                 .status(200)

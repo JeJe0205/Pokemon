@@ -1,9 +1,8 @@
 package ch.bzz.pokemon.service;
 
 import ch.bzz.pokemon.data.DataHandler;
-import ch.bzz.pokemon.model.Pokemon;
 import ch.bzz.pokemon.model.Typ;
-import com.sun.xml.internal.bind.v2.model.core.ID;
+
 
 
 import javax.validation.Valid;
@@ -11,7 +10,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
-import java.util.UUID;
+
 
 
 @Path("typ")
