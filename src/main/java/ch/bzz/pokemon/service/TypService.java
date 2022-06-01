@@ -65,13 +65,13 @@ public class TypService {
             @FormParam("typ") String typ,
             @FormParam("typID") String typID
     ){
-        Typ typ = new Typ();
-        typ.setTypID(ID.randomID().toString());
-        typ.setTyp(typ);
-        typ.setTypID(typID);
+        Typ typ1 = new Typ();
+        typ1.setTypID(ID.randomID().toString());
+        typ1.setTyp(typ);
+        typ1.setTypID(typID);
 
 
-        DataHandler.insertTyp(typ);
+        DataHandler.insertTyp(typ1);
         return Response
                 .status(200)
                 .entity("")
@@ -93,10 +93,10 @@ public class TypService {
 
     ){
         int httpStatus = 200;
-        Typ typ = DataHandler.readTypByID(typID);
-        if (typ != null){
-            typ.setTyp(typ);
-            typ.setTypID(typID);
+        Typ typ1 = DataHandler.readTypByID(typID);
+        if (typ1 != null){
+            typ1.setTyp(typ);
+            typ1.setTypID(typID);
 
             DataHandler.updateTyp();
         }else {

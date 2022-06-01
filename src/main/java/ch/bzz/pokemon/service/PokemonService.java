@@ -82,6 +82,17 @@ public class PokemonService {
                 .build();
     }
 
+    /**
+     *
+     * @param pokemonID
+     * @param name
+     * @param megaEvolution
+     * @param groesse
+     * @param trainerID
+     * @param typID
+     * @return Response
+     */
+
     @POST
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)

@@ -68,13 +68,13 @@ public class TrainerService {  /**
             @FormParam("trainerID") String trainerID
           
     ){
-        Trainer trainer = new Trainer();
-        trainer.setTrainerID(ID.randomID().toString());
-        trainer.setTrainer(trainer);
-        trainer.setOrt(ort);
+        Trainer trainer1 = new Trainer();
+        trainer1.setTrainerID(ID.randomID().toString());
+        trainer1.setTrainer(trainer);
+        trainer1.setOrt(ort);
      
 
-        DataHandler.insertTrainer(trainer);
+        DataHandler.insertTrainer(trainer1);
         return Response
                 .status(200)
                 .entity("")
@@ -97,11 +97,11 @@ public class TrainerService {  /**
             @FormParam("ort") String ort
     ){
         int httpStatus = 200;
-        Trainer trainer = DataHandler.readTrainerByID(trainerID);
-        if (trainer != null){
-            trainer.setTrainerID(trainerID);
-            trainer.setTrainer(trainer);
-            trainer.setOrt(ort);
+        Trainer trainer1 = DataHandler.readTrainerByID(trainerID);
+        if (trainer1 != null){
+            trainer1.setTrainerID(trainerID);
+            trainer1.setTrainer(trainer);
+            trainer1.setOrt(ort);
 
 
             DataHandler.updateTrainer();
