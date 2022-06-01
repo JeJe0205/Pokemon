@@ -6,6 +6,7 @@ import ch.bzz.pokemon.model.Trainer;
 import com.sun.xml.internal.bind.v2.model.core.ID;
 
 
+import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -54,27 +55,18 @@ public class TrainerService {  /**
 
     /**
      *
-     * @param trainer
-     * @param ort
-     * @param trainerID
      * @return Response
      */
     @POST
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertTrainer(
-            @FormParam("trainer") String trainer,
-            @FormParam("ort") String ort,
-            @FormParam("trainerID") String trainerID
+            @Valid @BeanParam Pokemon pokemon
           
     ){
-        Trainer trainer1 = new Trainer();
-        trainer1.setTrainerID(ID.randomID().toString());
-        trainer1.setTrainer(trainer);
-        trainer1.setOrt(ort);
-     
+        Trainer trainer = new Trainer();
 
-        DataHandler.insertTrainer(trainer1);
+        DataHandler.insertTrainer(trainer);
         return Response
                 .status(200)
                 .entity("")
@@ -84,7 +76,7 @@ public class TrainerService {  /**
     /**
      *
      * @param trainerID
-     * @param trainer
+     * @param trainerName
      * @param ort
      * @return Response
      */
@@ -93,15 +85,15 @@ public class TrainerService {  /**
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateTrainer(
             @FormParam("trainerID") String trainerID,
-            @FormParam("trainer") String trainer,
+            @FormParam("trainer") String trainerName,
             @FormParam("ort") String ort
     ){
         int httpStatus = 200;
-        Trainer trainer1 = DataHandler.readTrainerByID(trainerID);
-        if (trainer1 != null){
-            trainer1.setTrainerID(trainerID);
-            trainer1.setTrainer(trainer);
-            trainer1.setOrt(ort);
+        Trainer trainer = DataHandler.readTrainerByID(trainerID);
+        if (trainer != null){
+            trainer.setTrainerID(trainerID);
+            trainer.setTrainer(trainerName);
+            trainer.setOrt(ort);
 
 
             DataHandler.updateTrainer();

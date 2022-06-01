@@ -1,16 +1,16 @@
 [
   {
-    "trainerID": "1",
+    "trainerID": "ID-1",
     "trainer": "Ash",
     "ort": "Alabastia"
   },
   {
-    "trainerID": "2",
+    "trainerID": "ID-2",
     "trainer": "Misty",
     "ort": "Azuria City"
   },
   {
-    "trainerID": "3",
+    "trainerID": "ID-3",
     "trainer": "Rocko",
     "ort": "Marmoria City"
   }

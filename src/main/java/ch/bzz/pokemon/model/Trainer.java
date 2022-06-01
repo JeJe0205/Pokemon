@@ -1,11 +1,25 @@
 package ch.bzz.pokemon.model;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+import javax.ws.rs.FormParam;
+
 /**
  * a pokemon trainer
  */
 public class Trainer {
+    @FormParam("trainerID")
+    @Pattern(regexp = "ID-\\d{1,2}" )
+    @NotEmpty
     private String trainerID;
+    @FormParam("trainer")
+    @NotEmpty
+    @Size(min=1, max=10)
     private String trainer;
+    @FormParam("ort")
+    @NotEmpty
+    @Size(min=1, max=20)
     private String ort;
 
     /**

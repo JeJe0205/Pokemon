@@ -48,6 +48,7 @@ public class DataHandler {
     }*/
 
 
+
     /**
      * reads all pokemos
      * @return list of pokemons
@@ -257,6 +258,7 @@ public class DataHandler {
         }
     }
 
+
     /**
      * reads the types from the JSON-file
      */
@@ -364,7 +366,7 @@ public class DataHandler {
      * @return typList the value to set
      */
 
-    private static List<Typ> getTypList() {
+    public static List<Typ> getTypList() {
         return typList;
     }
     /**
@@ -394,5 +396,26 @@ public class DataHandler {
         trainerList = trainerList;
     }
 
+
+    public static List<Typ> getTypes(String[] typIDs) {
+        List<Typ> types = new ArrayList<>();
+        for (String typID : typIDs) {
+            Typ typ = getTypByID(typID);
+            if (typ != null) {
+                types.add(typ);
+            }
+        }
+        return types;
+    }
+
+    private static Typ getTypByID(String typID) {
+        Typ typ = null;
+        for(Typ entry : getTypList()){
+            if (entry.getTypID().equals(typID)){
+                typ = entry;
+            }
+        }
+        return typ;
+    }
 
 }

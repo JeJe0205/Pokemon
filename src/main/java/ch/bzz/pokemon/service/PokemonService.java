@@ -3,8 +3,7 @@ package ch.bzz.pokemon.service;
 import ch.bzz.pokemon.data.DataHandler;
 import ch.bzz.pokemon.model.Pokemon;
 
-import com.sun.xml.internal.bind.v2.model.core.ID;
-
+import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -50,31 +49,15 @@ public class PokemonService {
 
     /**
      *
-     * @param name
-     * @param megaEvolution
-     * @param groesse
-     * @param trainerID
-     * @param typID
-     * @return
+     * @return Response
      */
     @POST
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertPokemon(
-            @FormParam("name") String name,
-            @FormParam("megaEvolution") Boolean megaEvolution,
-            @FormParam("groesse") Double groesse,
-            @FormParam("trainerID") String trainerID,
-            @FormParam("typID") String typID
+            @Valid @BeanParam Pokemon pokemon
     ){
-        Pokemon pokemon = new Pokemon();
-        pokemon.setPokemonID(ID.randomID().toString());
-        pokemon.setName(name);
-        pokemon.setMegaEvolution(megaEvolution);
-        pokemon.setGroesse(groesse);
-        pokemon.setTrainerID(trainerID);
-        pokemon.setTypID(typID);
-
+        pokemon.setPokemonID(pokemon.getPokemonID());
         DataHandler.insertPokemon(pokemon);
         return Response
                 .status(200)
@@ -107,11 +90,15 @@ public class PokemonService {
         int httpStatus = 200;
         Pokemon pokemon = DataHandler.readPokemonByID(pokemonID);
         if (pokemon != null){
-            pokemon.setName(name);
-            pokemon.setMegaEvolution(megaEvolution);
-            pokemon.setGroesse(groesse);
-            pokemon.setTrainerID(trainerID);
-            pokemon.setTypID(typID);
+            setAttributes(
+                    pokemon,
+                    name,
+                    megaEvolution,
+                    groesse,
+                    trainerID,
+                    typID
+
+            );
 
             DataHandler.updatePokemon();
         }else {
@@ -142,6 +129,22 @@ public class PokemonService {
                 .status(httpStatus)
                 .entity("")
                 .build();
+    }
+
+    private void setAttributes(
+            Pokemon pokemon,
+            String name,
+            Boolean megaEvolution,
+            Double groesse,
+            String trainerID,
+            String typID
+    ) {
+        pokemon.setName(name);
+        pokemon.setMegaEvolution(megaEvolution);
+        pokemon.setGroesse(groesse);
+        pokemon.setTrainerID(trainerID);
+        pokemon.setTypID(typID);
+
     }
 }
 

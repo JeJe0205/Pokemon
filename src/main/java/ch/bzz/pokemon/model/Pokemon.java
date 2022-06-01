@@ -3,6 +3,13 @@ package ch.bzz.pokemon.model;
 import ch.bzz.pokemon.data.DataHandler;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+import javax.ws.rs.FormParam;
+import java.util.List;
+
 
 /**
  * a Pakemon
@@ -12,25 +19,33 @@ public class Pokemon {
     private Typ typ;
     @JsonIgnore
     private Trainer trainer;
-
+    @FormParam("pokemonID")
+    @Pattern(regexp = "ID-\\d{1,3}" )
+    @NotEmpty
     private String pokemonID;
+    @FormParam("name")
+    @NotEmpty
+    @Size(min=1, max=10)
     private String name;
+    @FormParam("megaEvolution")
+    @Size(min=4, max=5)
+    @NotEmpty
     private boolean megaEvolution;
+    @FormParam("groesse")
+    @NotEmpty
+    @DecimalMin("0.1")
+    @DecimalMin("20.0")
     private double groesse;
 
-    /**
-     * gets the typID from the Typ-object
-     * @return typID
-     */
-    public String getTypID() {
-        if (getTypID()== null) return null;
-        return getTyp().getTypID();
+
+    public Typ getTyp() {
+        return typ;
     }
 
-    /**
-     * creates a Typ-object without the pokemonList
-     * @param typID
-     */
+    public void setTyp(Typ typ) {
+        this.typ = typ;
+    }
+
     public void setTypID(String typID) {
         setTyp( new Typ());
         Typ typ = DataHandler.readTypByID(typID);
@@ -39,22 +54,7 @@ public class Pokemon {
 
     }
     /**
-     * gets typ
-     *
-     * @return value of typ
-     */
-    public Typ getTyp() {
-        return typ;
-    }
 
-    /**
-     * sets typ
-     *
-     * @param typ the value to set
-     */
-    public void setTyp(Typ typ) {
-        this.typ = typ;
-    }
     /**
      * gets the trainerID from the Trainer-object
      * @return trainerID
@@ -150,6 +150,5 @@ public class Pokemon {
     public void setName(String name) {
         this.name = name;
     }
-
 
 }

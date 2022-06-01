@@ -1,7 +1,18 @@
 package ch.bzz.pokemon.model;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+import javax.ws.rs.FormParam;
+
 public class Typ {
+    @FormParam("typ")
+    @NotEmpty
+    @Size(min=1, max=20)
     private String typ;
+    @FormParam("typID")
+    @NotEmpty
+    @Pattern(regexp = "ID-\\d{1,2}" )
     private String typID;
 
 

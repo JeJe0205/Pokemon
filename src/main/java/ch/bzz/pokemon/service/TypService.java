@@ -6,10 +6,12 @@ import ch.bzz.pokemon.model.Typ;
 import com.sun.xml.internal.bind.v2.model.core.ID;
 
 
+import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
+import java.util.UUID;
 
 
 @Path("typ")
@@ -54,24 +56,17 @@ public class TypService {
 
     /**
      *
-     * @param typ
-     * @param typID
      * @return Response
      */
     @POST
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertTyp(
-            @FormParam("typ") String typ,
-            @FormParam("typID") String typID
+            @Valid @BeanParam Pokemon pokemon
     ){
-        Typ typ1 = new Typ();
-        typ1.setTypID(ID.randomID().toString());
-        typ1.setTyp(typ);
-        typ1.setTypID(typID);
+        Typ typ = new Typ();
 
-
-        DataHandler.insertTyp(typ1);
+        DataHandler.insertTyp(typ);
         return Response
                 .status(200)
                 .entity("")
@@ -81,7 +76,7 @@ public class TypService {
     /**
      *
      * @param typID
-     * @param typ
+     * @param typName
      * @return Response
      */
     @POST
@@ -89,14 +84,13 @@ public class TypService {
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateTyp(
             @FormParam("typID") String typID,
-            @FormParam("typ") String typ
+            @FormParam("typ") String typName
 
     ){
         int httpStatus = 200;
-        Typ typ1 = DataHandler.readTypByID(typID);
-        if (typ1 != null){
-            typ1.setTyp(typ);
-            typ1.setTypID(typID);
+        Typ typ = DataHandler.readTypByID(typID);
+        if (typ != null){
+            typ.setTyp(typName);
 
             DataHandler.updateTyp();
         }else {

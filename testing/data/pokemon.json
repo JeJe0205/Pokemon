@@ -1,22 +1,22 @@
 [
   {
-    "pokemonID": "1",
+    "pokemonID": "ID-1",
     "name": "Bisasam",
     "megaEvolution": false,
     "groesse": 0.7,
     "trainerID": "1",
-    "typID": "8"
+    "typID": "10"
   },
   {
-    "pokemonID": "2",
+    "pokemonID": "ID-2",
     "name": "Bisaknosp",
     "megaEvolution": false,
     "groesse" : 1.0,
     "trainerID": "1",
-    "typID": "8"
+    "typID": "10"
   },
   {
-    "pokemonID": "3",
+    "pokemonID": "ID-3",
     "name": "Bisaflor",
     "megaEvolution": true,
     "groesse": 2.0,
