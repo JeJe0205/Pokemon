@@ -53,6 +53,10 @@ public class Pokemon {
         getTyp().setTyp(typ.getTyp());
 
     }
+    public String getTypID(){
+        if (getTyp()== null)return null;
+        return getTyp().getTypID();
+    }
     /**
 
     /**
@@ -60,6 +64,7 @@ public class Pokemon {
      * @return trainerID
      */
     public String getTrainerID() {
+        if (getTrainer()==null)return null;
         return getTrainer().getTrainerID();
     }
     /**

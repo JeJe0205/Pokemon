@@ -30,24 +30,15 @@ public class DataHandler {
      * private constructor defeats instantiation
      */
     private DataHandler() {
-        /*setTypList(new ArrayList<>());
-        readTypJSON();
-        setPokemonList(new ArrayList<>());
-        readPokemonJSON();
-        setTrainerList(new ArrayList<>());
-        readTrainerJSON();*/
     }
     /**
-     * gets the only instance of this class
-     * @return instance
+     * initializes the lists
      */
-    /*public static DataHandler getInstance() {
-        if (instance == null)
-            instance = new DataHandler();
-        return instance;
-    }*/
-
-
+    public static void initLists() {
+        DataHandler.setPokemonList(null);
+        DataHandler.setTypList(null);
+        DataHandler.setTrainerList(null);
+    }
 
     /**
      * reads all pokemos
@@ -262,7 +253,7 @@ public class DataHandler {
     /**
      * reads the types from the JSON-file
      */
-    private void readTypJSON() {
+    private static void readTypJSON() {
         try {
             byte[] jsonData = Files.readAllBytes(
                     Paths.get(
@@ -303,7 +294,7 @@ public class DataHandler {
     /**
      * reads the trainers from the JSON-file
      */
-    private void readTrainerJSON() {
+    private static void readTrainerJSON() {
         try {
             byte[] jsonData = Files.readAllBytes(
                     Paths.get(
@@ -367,6 +358,10 @@ public class DataHandler {
      */
 
     public static List<Typ> getTypList() {
+        if (typList == null){
+            setTypList(new ArrayList<>());
+            readTypJSON();
+        }
         return typList;
     }
     /**
@@ -375,8 +370,8 @@ public class DataHandler {
      * @param typList the value to set
      */
 
-    private void setTypList(List<Typ> typList) {
-        typList = typList;
+    private static void setTypList(List<Typ> typList) {
+        DataHandler.typList = typList;
     }
     /**
      * gets trainerList
@@ -385,6 +380,10 @@ public class DataHandler {
      */
 
     private static List<Trainer> getTrainerList() {
+        if (trainerList == null){
+            setTrainerList(new ArrayList<>());
+            readTrainerJSON();
+        }
         return trainerList;
     }
     /**
@@ -392,30 +391,7 @@ public class DataHandler {
      *
      * @param trainerList the value to set
      */
-    private void setTrainerList(List<Trainer> trainerList) {
-        trainerList = trainerList;
+    private static void setTrainerList(List<Trainer> trainerList) {
+        DataHandler.trainerList = trainerList;
     }
-
-
-    public static List<Typ> getTypes(String[] typIDs) {
-        List<Typ> types = new ArrayList<>();
-        for (String typID : typIDs) {
-            Typ typ = getTypByID(typID);
-            if (typ != null) {
-                types.add(typ);
-            }
-        }
-        return types;
-    }
-
-    private static Typ getTypByID(String typID) {
-        Typ typ = null;
-        for(Typ entry : getTypList()){
-            if (entry.getTypID().equals(typID)){
-                typ = entry;
-            }
-        }
-        return typ;
-    }
-
 }
