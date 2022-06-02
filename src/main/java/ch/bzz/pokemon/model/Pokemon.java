@@ -19,20 +19,23 @@ public class Pokemon {
     private Typ typ;
     @JsonIgnore
     private Trainer trainer;
+
     @FormParam("pokemonID")
     @Pattern(regexp = "ID-\\d{1,3}" )
     @NotEmpty
     private String pokemonID;
+
     @FormParam("name")
     @NotEmpty
     @Size(min=1, max=10)
     private String name;
+
     @FormParam("megaEvolution")
     @Size(min=4, max=5)
     @NotEmpty
     private boolean megaEvolution;
+
     @FormParam("groesse")
-    @NotEmpty
     @DecimalMin("0.1")
     @DecimalMin("20.0")
     private double groesse;

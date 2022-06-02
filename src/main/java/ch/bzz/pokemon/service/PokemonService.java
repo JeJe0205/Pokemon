@@ -55,9 +55,11 @@ public class PokemonService {
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertPokemon(
-            @Valid @BeanParam Pokemon pokemon
+            @Valid @BeanParam Pokemon pokemon,
+            @FormParam("typID") String typID
     ){
-        pokemon.setPokemonID(pokemon.getPokemonID());
+
+        pokemon.setTypID(typID);
         DataHandler.insertPokemon(pokemon);
         return Response
                 .status(200)
@@ -74,7 +76,8 @@ public class PokemonService {
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
     public Response updatePokemon(
-            @Valid @BeanParam Pokemon pokemon
+            @Valid @BeanParam Pokemon pokemon,
+            @FormParam("typID") String typID
     ){
         int httpStatus = 200;
         Pokemon oldPokemon = DataHandler.readPokemonByID(pokemon.getPokemonID());
@@ -116,7 +119,7 @@ public class PokemonService {
                 .build();
     }
 
-    private void setAttributes(
+    /*private void setAttributes(
             Pokemon pokemon,
             String name,
             Boolean megaEvolution,
@@ -130,6 +133,6 @@ public class PokemonService {
         pokemon.setTrainerID(trainerID);
         pokemon.setTypID(typID);
 
-    }
+    }*/
 }
 
