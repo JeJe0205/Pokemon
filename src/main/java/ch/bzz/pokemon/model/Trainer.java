@@ -17,7 +17,7 @@ public class Trainer {
     private List<Pokemon> pokemonList;
 
     @FormParam("trainerID")
-    @Pattern(regexp = "ID-\\d{1,2}" )
+    @Pattern(regexp = "ID-\\d{1,2}")
     @NotEmpty
     private String trainerID;
     @FormParam("trainer")
