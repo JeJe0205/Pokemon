@@ -21,7 +21,7 @@ public class Pokemon {
     private Trainer trainer;
 
     @FormParam("pokemonID")
-    @Pattern(regexp = "ID-\\d{1,3}" )
+    @Pattern(regexp = "ID-\\d{1,3}")
     @NotEmpty
     private String pokemonID;
 
@@ -32,7 +32,6 @@ public class Pokemon {
 
     @FormParam("megaEvolution")
     @Size(min=4, max=5)
-    @NotEmpty
     private boolean megaEvolution;
 
     @FormParam("groesse")

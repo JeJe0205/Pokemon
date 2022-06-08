@@ -51,6 +51,7 @@ public class PokemonService {
      *
      * @return Response
      */
+
     @POST
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
@@ -118,21 +119,5 @@ public class PokemonService {
                 .entity("")
                 .build();
     }
-
-    /*private void setAttributes(
-            Pokemon pokemon,
-            String name,
-            Boolean megaEvolution,
-            Double groesse,
-            String trainerID,
-            String typID
-    ) {
-        pokemon.setName(name);
-        pokemon.setMegaEvolution(megaEvolution);
-        pokemon.setGroesse(groesse);
-        pokemon.setTrainerID(trainerID);
-        pokemon.setTypID(typID);
-
-    }*/
 }
 
