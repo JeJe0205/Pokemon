@@ -16,10 +16,10 @@ public class Typ {
     @NotEmpty
     @Size(min=1, max=20)
     private String typ;
-    @FormParam("typID")
+    @FormParam("typUUID")
     @NotEmpty
     @Pattern(regexp = "ID-\\d{1,2}" )
-    private String typID;
+    private String typUUID;
 
     /**
      * default constructor
@@ -52,8 +52,8 @@ public class Typ {
      * @return value of typiD
      */
 
-    public String getTypID() {
-        return typID;
+    public String getTypUUID() {
+        return typUUID;
     }
 
     /**
@@ -62,8 +62,8 @@ public class Typ {
      * @param typID the value to set
      */
 
-    public void setTypID(String typID) {
-        this.typID = typID;
+    public void setTypUUID(String typUUID) {
+        this.typUUID = typUUID;
     }
 
 

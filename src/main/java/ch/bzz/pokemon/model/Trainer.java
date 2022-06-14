@@ -16,10 +16,10 @@ public class Trainer {
     @JsonIgnore
     private List<Pokemon> pokemonList;
 
-    @FormParam("trainerID")
+    @FormParam("trainerUUID")
     @Pattern(regexp = "ID-\\d{1,2}")
     @NotEmpty
-    private String trainerID;
+    private String trainerUUID;
     @FormParam("trainer")
     @NotEmpty
     @Size(min=1, max=10)
@@ -59,18 +59,18 @@ public class Trainer {
      *
      * @return value of trainerID
      */
-    public String getTrainerID() {
-        return trainerID;
+    public String getTrainerUUID() {
+        return trainerUUID;
     }
 
     /**
      * sets trainerID
      *
-     * @param trainerID the value to set
+     * @param trainerUUID the value to set
      */
 
-    public void setTrainerID(String trainerID) {
-        this.trainerID = trainerID;
+    public void setTrainerUUID(String trainerUUID) {
+        this.trainerUUID = trainerUUID;
     }
 
     /**

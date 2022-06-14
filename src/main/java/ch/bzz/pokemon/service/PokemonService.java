@@ -2,6 +2,7 @@ package ch.bzz.pokemon.service;
 
 import ch.bzz.pokemon.data.DataHandler;
 import ch.bzz.pokemon.model.Pokemon;
+import com.sun.xml.internal.bind.v2.model.core.ID;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
@@ -10,7 +11,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
-
+import java.util.UUID;
 
 
 @Path("pokemon")
@@ -36,9 +37,9 @@ public class PokemonService {
     public Response readPokemon(
             @NotEmpty
             @Pattern(regexp="ID-\\d{1,3}")
-            @QueryParam("id") String pokemonID
+            @QueryParam("uuid") String pokemonUUID
     ){
-        Pokemon pokemon = DataHandler.readPokemonByID(pokemonID);
+        Pokemon pokemon = DataHandler.readPokemonByUUID(pokemonUUID);
         int httpsStatus;
         if (pokemon == null){
             httpsStatus = 404;
@@ -66,7 +67,7 @@ public class PokemonService {
 
     ){
 
-        pokemon.setTypID(typID);
+        pokemon.setTypUUID(UUID.randomUUID().toString());
         DataHandler.insertPokemon(pokemon);
         return Response
                 .status(200)
@@ -84,17 +85,17 @@ public class PokemonService {
     @Produces(MediaType.TEXT_PLAIN)
     public Response updatePokemon(
             @Valid @BeanParam Pokemon pokemon,
-            @FormParam("typID") String typID
+            @FormParam("typUUID") String typUUID
 
     ){
         int httpStatus = 200;
-        Pokemon oldPokemon = DataHandler.readPokemonByID(pokemon.getPokemonID());
+        Pokemon oldPokemon = DataHandler.readPokemonByUUID(pokemon.getPokemonUUID());
         if (oldPokemon != null){
             oldPokemon.setName(pokemon.getName());
             oldPokemon.setGroesse(pokemon.getGroesse());
             oldPokemon.setMegaEvolution(pokemon.MegaEvolution());
-            oldPokemon.setTrainerID(pokemon.getTrainerID());
-            oldPokemon.setTypID(pokemon.getTyp().getTypID());
+            oldPokemon.setTrainerUUID(pokemon.getTrainerUUID());
+            oldPokemon.setTypUUID(pokemon.getTyp().getTypUUID());
 
             DataHandler.updatePokemon();
         }else {
@@ -108,7 +109,7 @@ public class PokemonService {
 
     /**
      * delets a pokemon indentified by its uuid
-     * @param pokemonID the key
+     * @param pokemonUUID the key
      * @return Response
      */
     @DELETE
@@ -117,10 +118,10 @@ public class PokemonService {
     public Response deletePokemon(
             @NotEmpty
             @Pattern(regexp="ID-\\d{1,3}")
-            @QueryParam("id") String pokemonID
+            @QueryParam("uuid") String pokemonUUID
     ){
         int httpStatus = 200;
-        if (!DataHandler.deletePokemon(pokemonID)){
+        if (!DataHandler.deletePokemon(pokemonUUID)){
             httpStatus = 410;
         }
         return Response

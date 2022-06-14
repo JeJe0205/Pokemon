@@ -2,12 +2,14 @@ package ch.bzz.pokemon.service;
 
 import ch.bzz.pokemon.data.DataHandler;
 import ch.bzz.pokemon.model.Trainer;
+import com.sun.xml.internal.bind.v2.model.core.ID;
 
 import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
+import java.util.UUID;
 
 
 @Path("trainer")
@@ -27,16 +29,16 @@ public class TrainerService {  /**
     }
     /**
      * reads trainer by ID
-     * @param trainerID
+     * @param trainerUUID
      * @return trainerID
      */
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
     public Response readTrainer(
-            @QueryParam("id") String trainerID
+            @QueryParam("uuid") String trainerUUID
     ){
-        Trainer trainer = DataHandler.readTrainerByID(trainerID);
+        Trainer trainer = DataHandler.readTrainerByUUID(trainerUUID);
         int httpsStatus;
         if (trainer == null){
             httpsStatus = 404;
@@ -60,7 +62,7 @@ public class TrainerService {  /**
             @Valid @BeanParam Trainer trainer
           
     ){
-
+        trainer.setTrainerUUID(UUID.randomUUID().toString());
         DataHandler.insertTrainer(trainer);
         return Response
                 .status(200)
@@ -79,9 +81,9 @@ public class TrainerService {  /**
             @Valid @BeanParam Trainer trainer
     ){
         int httpStatus = 200;
-        Trainer oldTrainer = DataHandler.readTrainerByID(trainer.getTrainerID());
+        Trainer oldTrainer = DataHandler.readTrainerByUUID(trainer.getTrainerUUID());
         if (oldTrainer != null){
-            oldTrainer.setTrainerID(trainer.getTrainerID());
+            oldTrainer.setTrainerUUID(trainer.getTrainerUUID());
             oldTrainer.setTrainer(trainer.getTrainer());
             oldTrainer.setOrt(trainer.getOrt());
 
@@ -98,17 +100,17 @@ public class TrainerService {  /**
 
     /**
      * delets a pokemon indentified by its uuid
-     * @param trainerID the key
+     * @param trainerUUID the key
      * @return Response
      */
     @DELETE
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteTrainer(
-            @QueryParam("id") String trainerID
+            @QueryParam("uuid") String trainerUUID
     ){
         int httpStatus = 200;
-        if (!DataHandler.deleteTrainer(trainerID)){
+        if (!DataHandler.deleteTrainer(trainerUUID)){
             httpStatus = 410;
         }
         return Response

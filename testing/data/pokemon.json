@@ -1,22 +1,22 @@
 [ {
-  "pokemonID" : "ID-1",
+  "pokemonUUID" : "ID-1",
   "name" : "Bisasam",
   "megaEvolution" : false,
   "groesse" : 0.7,
-  "typID" : "ID-10",
-  "trainerID" : "ID-1"
+  "typUUID" : "ID-10",
+  "trainerUUID" : "ID-1"
 },{
-  "pokemonID" : "ID-2",
+  "pokemonUUID" : "ID-2",
   "name" : "Bisaknosp",
   "megaEvolution" : false,
   "groesse" : 1.0,
-  "typID" : "ID-10",
-  "trainerID" : "ID-1"
+  "typUUID" : "ID-10",
+  "trainerUUID" : "ID-1"
 }, {
-  "pokemonID" : "ID-3",
+  "pokemonUUID" : "ID-3",
   "name" : "Bisaflor",
   "megaEvolution" : true,
   "groesse" : 2.0,
-  "typID" : "ID-10",
-  "trainerID" : "ID-1"
+  "typUUID" : "ID-10",
+  "trainerUUID" : "ID-1"
 } ]

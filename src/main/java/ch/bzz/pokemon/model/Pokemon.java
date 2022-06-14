@@ -20,10 +20,10 @@ public class Pokemon {
     @JsonIgnore
     private Trainer trainer;
 
-    @FormParam("pokemonID")
+    @FormParam("pokemonUUID")
     @Pattern(regexp = "ID-\\d{1,3}")
     @NotEmpty
-    private String pokemonID;
+    private String pokemonUUID;
 
     @FormParam("name")
     @NotEmpty
@@ -48,16 +48,16 @@ public class Pokemon {
         this.typ = typ;
     }
 
-    public void setTypID(String typID) {
+    public void setTypUUID(String typUUID) {
         setTyp( new Typ());
-        Typ typ = DataHandler.readTypByID(typID);
-        getTyp().setTypID(typID);
+        Typ typ = DataHandler.readTypByUUID(typUUID);
+        getTyp().setTypUUID(typUUID);
         getTyp().setTyp(typ.getTyp());
 
     }
-    public String getTypID(){
+    public String getTypUUID(){
         if (getTyp()== null)return null;
-        return getTyp().getTypID();
+        return getTyp().getTypUUID();
     }
     /**
 
@@ -65,18 +65,18 @@ public class Pokemon {
      * gets the trainerID from the Trainer-object
      * @return trainerID
      */
-    public String getTrainerID() {
+    public String getTrainerUUID() {
         if (getTrainer()==null)return null;
-        return getTrainer().getTrainerID();
+        return getTrainer().getTrainerUUID();
     }
     /**
      * creates a Trainer-object without the pokemonList
-     * @param trainerID
+     * @param trainerUUID
      */
-    public void setTrainerID(String trainerID) {
+    public void setTrainerUUID(String trainerUUID) {
         setTrainer( new Trainer());
-        Trainer trainer = DataHandler.readTrainerByID(trainerID);
-        getTrainer().setTrainerID(trainerID);
+        Trainer trainer = DataHandler.readTrainerByUUID(trainerUUID);
+        getTrainer().setTrainerUUID(trainerUUID);
         getTrainer().setTrainer(trainer.getTrainer());
 
     }
@@ -130,16 +130,16 @@ public class Pokemon {
      *
      * @return value of pokemonID
      */
-    public String getPokemonID() {
-        return pokemonID;
+    public String getPokemonUUID() {
+        return pokemonUUID;
     }
     /**
      * sets pokemonID
      *
      * @param pokemonID the value to set
      */
-    public void setPokemonID(String pokemonID) {
-        this.pokemonID = pokemonID;
+    public void setPokemonUUID(String pokemonID) {
+        this.pokemonUUID = pokemonUUID;
     }
     /**
      * gets name

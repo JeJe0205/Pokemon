@@ -48,13 +48,13 @@ public class DataHandler {
 
     /**
      * reads a pokemon by its id
-     * @param pokemonID
+     * @param pokemonUUID
      * @return the Pokemon (null=not found)
      */
-    public static Pokemon readPokemonByID(String pokemonID) {
+    public static Pokemon readPokemonByUUID(String pokemonUUID) {
         Pokemon pokemon = null;
         for (Pokemon entry : getPokemonList()) {
-            if (entry.getPokemonID().equals(pokemonID)) {
+            if (entry.getPokemonUUID().equals(pokemonUUID)) {
                 pokemon = entry;
             }
         }
@@ -80,11 +80,11 @@ public class DataHandler {
 
     /**
      * deletes a book identified by the bookUUID
-     * @param pokemonID  the key
+     * @param pokemonUUID  the key
      * @return  success=true/false
      */
-    public static boolean deletePokemon(String pokemonID) {
-        Pokemon pokemon = readPokemonByID(pokemonID);
+    public static boolean deletePokemon(String pokemonUUID) {
+        Pokemon pokemon = readPokemonByUUID(pokemonUUID);
         if (pokemon != null) {
             getPokemonList().remove(pokemon);
             writePokemonJSON();
@@ -105,13 +105,13 @@ public class DataHandler {
 
     /**
      * reads a Typ by its id
-     * @param typID
+     * @param
      * @return the Typ (null=not found)
      */
-    public static Typ readTypByID(String typID) {
+    public static Typ readTypByUUID(String typUUID) {
         Typ typ = null;
         for (Typ entry : getTypList()) {
-            if (entry.getTypID().equals(typID)) {
+            if (entry.getTypUUID().equals(typUUID)) {
                 typ = entry;
             }
         }
@@ -137,11 +137,11 @@ public class DataHandler {
 
     /**
      * deletes a book identified by the bookUUID
-     * @param typID  the key
+     * @param typUUID  the key
      * @return  success=true/false
      */
-    public static boolean deleteTyp(String typID) {
-        Typ typ = readTypByID(typID);
+    public static boolean deleteTyp(String typUUID) {
+        Typ typ = readTypByUUID(typUUID);
         if (typ != null) {
             getTypList().remove(typ);
             writeTypJSON();
@@ -163,13 +163,13 @@ public class DataHandler {
 
     /**
      * reads a trainer by its id
-     * @param trainerID
+     * @param trainerUUID
      * @return the Trainer (null=not found)
      */
-    public static Trainer readTrainerByID(String trainerID) {
+    public static Trainer readTrainerByUUID(String trainerUUID) {
         Trainer trainer = null;
         for (Trainer entry : getTrainerList()) {
-            if (entry.getTrainerID().equals(trainerID)) {
+            if (entry.getTrainerUUID().equals(trainerUUID)) {
                 trainer = entry;
             }
         }
@@ -195,11 +195,11 @@ public class DataHandler {
 
     /**
      * deletes a book identified by the bookUUID
-     * @param trainerID  the key
+     * @param
      * @return  success=true/false
      */
-    public static boolean deleteTrainer(String trainerID) {
-        Trainer trainer = readTrainerByID(trainerID);
+    public static boolean deleteTrainer(String trainerUUID) {
+        Trainer trainer = readTrainerByUUID(trainerUUID);
         if (trainer != null) {
             getTrainerList().remove(trainer);
             writeTrainerJSON();
