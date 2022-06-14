@@ -102,7 +102,7 @@ public class Pokemon {
      *
      * @return value of trainer
      */
-    public boolean isMegaEvolution() {
+    public boolean MegaEvolution() {
         return megaEvolution;
     }
 

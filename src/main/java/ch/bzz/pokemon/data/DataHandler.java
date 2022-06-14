@@ -20,7 +20,6 @@ import java.util.List;
  * reads and writes the data in the JSON-files
  */
 public class DataHandler {
-    private static DataHandler instance = null;
     private static List<Pokemon> pokemonList;
     private static List<Typ> typList;
     private static List<Trainer> trainerList;

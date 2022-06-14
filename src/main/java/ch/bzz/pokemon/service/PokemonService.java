@@ -4,6 +4,8 @@ import ch.bzz.pokemon.data.DataHandler;
 import ch.bzz.pokemon.model.Pokemon;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -32,6 +34,8 @@ public class PokemonService {
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
     public Response readPokemon(
+            @NotEmpty
+            @Pattern(regexp="ID-\\d{1,3}")
             @QueryParam("id") String pokemonID
     ){
         Pokemon pokemon = DataHandler.readPokemonByID(pokemonID);
@@ -57,7 +61,9 @@ public class PokemonService {
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertPokemon(
             @Valid @BeanParam Pokemon pokemon,
+            @Pattern(regexp="ID-\\d{1,3}")
             @FormParam("typID") String typID
+
     ){
 
         pokemon.setTypID(typID);
@@ -79,13 +85,14 @@ public class PokemonService {
     public Response updatePokemon(
             @Valid @BeanParam Pokemon pokemon,
             @FormParam("typID") String typID
+
     ){
         int httpStatus = 200;
         Pokemon oldPokemon = DataHandler.readPokemonByID(pokemon.getPokemonID());
         if (oldPokemon != null){
             oldPokemon.setName(pokemon.getName());
             oldPokemon.setGroesse(pokemon.getGroesse());
-            oldPokemon.setMegaEvolution(pokemon.isMegaEvolution());
+            oldPokemon.setMegaEvolution(pokemon.MegaEvolution());
             oldPokemon.setTrainerID(pokemon.getTrainerID());
             oldPokemon.setTypID(pokemon.getTyp().getTypID());
 
@@ -108,6 +115,8 @@ public class PokemonService {
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deletePokemon(
+            @NotEmpty
+            @Pattern(regexp="ID-\\d{1,3}")
             @QueryParam("id") String pokemonID
     ){
         int httpStatus = 200;

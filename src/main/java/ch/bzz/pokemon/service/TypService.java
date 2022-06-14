@@ -6,6 +6,8 @@ import ch.bzz.pokemon.model.Typ;
 
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -38,6 +40,8 @@ public class TypService {
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
     public Response readTyp(
+            @NotEmpty
+            @Pattern(regexp="ID-\\d{1,3}")
             @QueryParam("id") String typID
     ){
         Typ typ = DataHandler.readTypByID(typID);
@@ -86,6 +90,7 @@ public class TypService {
         Typ oldTyp = DataHandler.readTypByID(typ.getTypID());
         if (oldTyp != null){
             oldTyp.setTyp(typ.getTyp());
+
 
             DataHandler.updateTyp();
         }else {
