@@ -3,20 +3,20 @@
   "name" : "Bisasam",
   "megaEvolution" : false,
   "groesse" : 0.7,
-  "typID" : "ID-10",
+  "typID" : ["ID-10","ID-9"],
   "trainerID" : "ID-1"
 },{
   "pokemonID" : "ID-2",
   "name" : "Bisaknosp",
   "megaEvolution" : false,
   "groesse" : 1.0,
-  "typID" : "ID-10",
+  "typID" : ["ID-10","ID-9"],
   "trainerID" : "ID-1"
 }, {
   "pokemonID" : "ID-3",
   "name" : "Bisaflor",
   "megaEvolution" : true,
   "groesse" : 2.0,
-  "typID" : "ID-10",
+  "typID" : ["ID-10","ID-9"],
   "trainerID" : "ID-1"
 } ]

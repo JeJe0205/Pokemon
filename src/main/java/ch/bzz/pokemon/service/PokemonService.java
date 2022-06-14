@@ -24,10 +24,10 @@ public class PokemonService {
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
     public Response listPokemons(){
-        List<Pokemon> pokemonMap = DataHandler.readAllPokemons();
+        List<Pokemon> pokemonList = DataHandler.readAllPokemons();
         Response response = Response
                 .status(200)
-                .entity(pokemonMap)
+                .entity(pokemonList)
                 .build();
         return response;
     }
@@ -70,7 +70,7 @@ public class PokemonService {
 
     ){
 
-        pokemon.setPokemonID(ID.randomID().toString());
+        //pokemon.setPokemonID(ID.randomID().toString());
         pokemon.setTrainerID(trainerID);
         pokemon.setTypIDListWithList(typIDList);
         DataHandler.insertPokemon(pokemon);

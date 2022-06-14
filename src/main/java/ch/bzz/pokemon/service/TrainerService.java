@@ -2,8 +2,12 @@ package ch.bzz.pokemon.service;
 
 import ch.bzz.pokemon.data.DataHandler;
 import ch.bzz.pokemon.model.Trainer;
+import com.sun.xml.internal.bind.v2.model.core.ID;
+import com.sun.xml.internal.ws.client.ResponseContextReceiver;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -20,10 +24,11 @@ public class TrainerService {  /**
     @Produces(MediaType.APPLICATION_JSON)
     public Response listTrainers(){
         List<Trainer> trainerList = DataHandler.readAllTrainers();
-        return Response
+        Response response = Response
                 .status(200)
                 .entity(trainerList)
                 .build();
+        return response;
     }
     /**
      * reads trainer by ID
@@ -34,6 +39,8 @@ public class TrainerService {  /**
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
     public Response readTrainer(
+            @NotEmpty
+            @Pattern(regexp="ID-\\d{1,3}")
             @QueryParam("id") String trainerID
     ){
         Trainer trainer = DataHandler.readTrainerByID(trainerID);
@@ -60,7 +67,7 @@ public class TrainerService {  /**
             @Valid @BeanParam Trainer trainer
           
     ){
-
+        //trainer.setTrainerID(ID.randomID().toString);
         DataHandler.insertTrainer(trainer);
         return Response
                 .status(200)
@@ -81,11 +88,8 @@ public class TrainerService {  /**
         int httpStatus = 200;
         Trainer oldTrainer = DataHandler.readTrainerByID(trainer.getTrainerID());
         if (oldTrainer != null){
-            oldTrainer.setTrainerID(trainer.getTrainerID());
             oldTrainer.setTrainer(trainer.getTrainer());
             oldTrainer.setOrt(trainer.getOrt());
-
-
             DataHandler.updateTrainer();
         }else {
             httpStatus = 410;
@@ -105,6 +109,8 @@ public class TrainerService {  /**
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteTrainer(
+            @NotEmpty
+            @Pattern(regexp="ID-\\d{1,3}")
             @QueryParam("id") String trainerID
     ){
         int httpStatus = 200;

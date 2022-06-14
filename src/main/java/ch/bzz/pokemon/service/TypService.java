@@ -2,7 +2,7 @@ package ch.bzz.pokemon.service;
 
 import ch.bzz.pokemon.data.DataHandler;
 import ch.bzz.pokemon.model.Typ;
-
+import com.sun.xml.internal.bind.v2.model.core.ID;
 
 
 import javax.validation.Valid;
@@ -51,10 +51,11 @@ public class TypService {
         }else {
             httpsStatus = 288;
         }
-        return Response
+        Response response = Response
                 .status(httpsStatus)
                 .entity(typ)
                 .build();
+        return response;
     }
 
     /**
@@ -67,7 +68,7 @@ public class TypService {
     public Response insertTyp(
             @Valid @BeanParam Typ typ
     ){
-
+        //typ.setTypID(ID.randomID().toString());
         DataHandler.insertTyp(typ);
         return Response
                 .status(200)
@@ -90,8 +91,6 @@ public class TypService {
         Typ oldTyp = DataHandler.readTypByID(typ.getTypID());
         if (oldTyp != null){
             oldTyp.setTyp(typ.getTyp());
-
-
             DataHandler.updateTyp();
         }else {
             httpStatus = 410;
@@ -111,6 +110,8 @@ public class TypService {
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteTyp(
+            @NotEmpty
+            @Pattern(regexp="ID-\\d{1,3}")
             @QueryParam("id") String typID
     ){
         int httpStatus = 200;
