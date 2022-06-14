@@ -1,28 +1,21 @@
-[
-  {
-    "pokemonID": "1",
-    "name": "Bisasam",
-    "megaEvolution": false,
-    "groesse": 0.7,
-    "trainerID": "1",
-    "typID": "8"
-  },
-  {
-    "pokemonID": "2",
-    "name": "Bisaknosp",
-    "megaEvolution": false,
-    "groesse" : 1.0,
-    "trainerID": "1",
-    "typID": "8"
-  },
-  {
-    "pokemonID": "3",
-    "name": "Bisaflor",
-    "megaEvolution": true,
-    "groesse": 2.0,
-    "trainerID": "1",
-    "typID": "10"
-  }
-]
-
-
+[ 
+{
+  "pokemonUUID" : "ID-1",
+  "name" : "Bisasam",
+  "groesse" : 1.0,
+  "typUUID" : "ID-10",
+  "trainerUUID" : "ID-1"
+},
+{
+  "pokemonUUID" : "ID-2",
+  "name" : "Bisaknosp",
+  "groesse" : 1.0,
+  "typUUID" : "ID-10",
+  "trainerUUID" : "ID-1"
+}, {
+  "pokemonUUID" : "ID-3",
+  "name" : "Bisaflor",
+  "groesse" : 2.0,
+  "typUUID" : "ID-10",
+  "trainerUUID" : "ID-1"
+} ]

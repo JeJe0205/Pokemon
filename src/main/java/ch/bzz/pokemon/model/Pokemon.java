@@ -1,71 +1,82 @@
 package ch.bzz.pokemon.model;
 
 import ch.bzz.pokemon.data.DataHandler;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+import javax.ws.rs.FormParam;
+import java.util.List;
 
 
 /**
- * a Pakemon
+ * a Pokemon
  */
 public class Pokemon {
+    @JsonIgnore
     private Typ typ;
+    @JsonIgnore
     private Trainer trainer;
 
-    private String pokemonID;
+    @FormParam("pokemonUUID")
+    @Pattern(regexp = "ID-\\d{1,3}")
+    @NotEmpty
+    private String pokemonUUID;
+
+    @FormParam("name")
+    @NotEmpty
+    @Size(min=1, max=10)
     private String name;
+
+    @FormParam("megaEvolution")
+    @Size(min=4, max=5)
     private boolean megaEvolution;
+
+    @FormParam("groesse")
+    @DecimalMin("0.1")
+    @DecimalMin("20.0")
     private double groesse;
 
-    /**
-     * gets the typID from the Typ-object
-     * @return typID
-     */
-    public String getTypID() {
-        return getTyp().getTypID();
-    }
 
-    /**
-     * creates a Typ-object without the pokemonList
-     * @param typID
-     */
-    public void setTypID(String typID) {
-        setTyp( new Typ());
-        Typ typ = DataHandler.getInstance().readTypByID(typID);
-        getTyp().setTypID(typID);
-        getTyp().setTyp(typ.getTyp());
-
-    }
-    /**
-     * gets typ
-     *
-     * @return value of typ
-     */
     public Typ getTyp() {
         return typ;
     }
 
-    /**
-     * sets typ
-     *
-     * @param typ the value to set
-     */
     public void setTyp(Typ typ) {
         this.typ = typ;
     }
+
+    public void setTypUUID(String typUUID) {
+        setTyp( new Typ());
+        Typ typ = DataHandler.readTypByUUID(typUUID);
+        getTyp().setTypUUID(typUUID);
+        getTyp().setTyp(typ.getTyp());
+
+    }
+    public String getTypUUID(){
+        if (getTyp()== null)return null;
+        return getTyp().getTypUUID();
+    }
+    /**
+
     /**
      * gets the trainerID from the Trainer-object
      * @return trainerID
      */
-    public String getTrainerID() {
-        return getTrainer().getTrainerID();
+    public String getTrainerUUID() {
+        if (getTrainer()==null)return null;
+        return getTrainer().getTrainerUUID();
     }
     /**
      * creates a Trainer-object without the pokemonList
-     * @param trainerID
+     * @param trainerUUID
      */
-    public void setTrainerID(String trainerID) {
+    public void setTrainerUUID(String trainerUUID) {
         setTrainer( new Trainer());
-        Trainer trainer = DataHandler.getInstance().readTrainerByID(trainerID);
-        getTrainer().setTrainerID(trainerID);
+        Trainer trainer = DataHandler.readTrainerByUUID(trainerUUID);
+        getTrainer().setTrainerUUID(trainerUUID);
         getTrainer().setTrainer(trainer.getTrainer());
 
     }
@@ -91,7 +102,7 @@ public class Pokemon {
      *
      * @return value of trainer
      */
-    public boolean isMegaEvolution() {
+    public boolean MegaEvolution() {
         return megaEvolution;
     }
 
@@ -119,16 +130,16 @@ public class Pokemon {
      *
      * @return value of pokemonID
      */
-    public String getPokemonID() {
-        return pokemonID;
+    public String getPokemonUUID() {
+        return pokemonUUID;
     }
     /**
      * sets pokemonID
      *
-     * @param pokemonID the value to set
+     * @param pokemonUUID the value to set
      */
-    public void setPokemonID(String pokemonID) {
-        this.pokemonID = pokemonID;
+    public void setPokemonUUID(String pokemonUUID) {
+        this.pokemonUUID = pokemonUUID;
     }
     /**
      * gets name
@@ -146,6 +157,5 @@ public class Pokemon {
     public void setName(String name) {
         this.name = name;
     }
-
 
 }

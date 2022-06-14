@@ -1,10 +1,32 @@
 package ch.bzz.pokemon.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+import javax.ws.rs.FormParam;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Typ {
+    @JsonIgnore
+    private List<Pokemon> pokemonList;
+    @FormParam("typ")
+    @NotEmpty
+    @Size(min=2, max=20)
     private String typ;
-    private String typID;
+    @FormParam("typUUID")
+    @NotEmpty
+    @Pattern(regexp = "ID-\\d{1,2}" )
+    private String typUUID;
 
-
+    /**
+     * default constructor
+     */
+    public Typ() {
+        setPokemonList(new ArrayList<>());
+    }
     /**
      * gets typ
      *
@@ -30,18 +52,39 @@ public class Typ {
      * @return value of typiD
      */
 
-    public String getTypID() {
-        return typID;
+    public String getTypUUID() {
+        return typUUID;
     }
 
     /**
      * sets publisherUUID
      *
-     * @param typID the value to set
+     * @param typUUID the value to set
      */
 
-    public void setTypID(String typID) {
-        this.typID = typID;
+    public void setTypUUID(String typUUID) {
+        this.typUUID = typUUID;
+    }
+
+
+    /**
+     * gets pokemonList
+     *
+     * @return value of pokemonList
+     */
+
+    public List<Pokemon> getPokemonList() {
+        return pokemonList;
+    }
+
+    /**
+     * sets pokemonList
+     *
+     * @param pokemonList the value to set
+     */
+
+    public void setPokemonList(List<Pokemon> pokemonList) {
+        this.pokemonList = pokemonList;
     }
 
 }

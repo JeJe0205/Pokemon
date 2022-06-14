@@ -1,14 +1,40 @@
 package ch.bzz.pokemon.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+import javax.ws.rs.FormParam;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * a pokemon trainer
  */
 public class Trainer {
-    private String trainerID;
+    @JsonIgnore
+    private List<Pokemon> pokemonList;
+
+    @FormParam("trainerUUID")
+    @Pattern(regexp = "ID-\\d{1,2}")
+    @NotEmpty
+    private String trainerUUID;
+    @FormParam("trainer")
+    @NotEmpty
+    @Size(min=2, max=10)
     private String trainer;
+    @FormParam("ort")
+    @NotEmpty
+    @Size(min=2, max=20)
     private String ort;
 
-
+    /**
+     * default constructor
+     */
+    public Trainer() {
+        setPokemonList(new ArrayList<>());
+    }
     /**
      * gets trainer
      *
@@ -33,18 +59,18 @@ public class Trainer {
      *
      * @return value of trainerID
      */
-    public String getTrainerID() {
-        return trainerID;
+    public String getTrainerUUID() {
+        return trainerUUID;
     }
 
     /**
      * sets trainerID
      *
-     * @param trainerID the value to set
+     * @param trainerUUID the value to set
      */
 
-    public void setTrainerID(String trainerID) {
-        this.trainerID = trainerID;
+    public void setTrainerUUID(String trainerUUID) {
+        this.trainerUUID = trainerUUID;
     }
 
     /**
@@ -65,4 +91,27 @@ public class Trainer {
     public void setOrt(String ort) {
         this.ort = ort;
     }
+
+
+    /**
+     * gets pokemonList
+     *
+     * @return value of pokemonList
+     */
+
+    public List<Pokemon> getPokemonList() {
+        return pokemonList;
+    }
+
+    /**
+     * sets pokemonList
+     *
+     * @param pokemonList the value to set
+     */
+
+    public void setPokemonList(List<Pokemon> pokemonList) {
+        this.pokemonList = pokemonList;
+    }
+
+
 }
