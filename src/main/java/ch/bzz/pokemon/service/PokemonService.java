@@ -2,6 +2,7 @@ package ch.bzz.pokemon.service;
 
 import ch.bzz.pokemon.data.DataHandler;
 import ch.bzz.pokemon.model.Pokemon;
+import com.sun.xml.internal.bind.v2.model.core.ID;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
@@ -23,11 +24,12 @@ public class PokemonService {
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
     public Response listPokemons(){
-        List<Pokemon> pokemonList = DataHandler.readAllPokemons();
-        return Response
+        List<Pokemon> pokemonMap = DataHandler.readAllPokemons();
+        Response response = Response
                 .status(200)
-                .entity(pokemonList)
+                .entity(pokemonMap)
                 .build();
+        return response;
     }
 
     @GET
@@ -45,10 +47,11 @@ public class PokemonService {
         }else {
             httpsStatus = 288;
         }
-        return Response
+        Response response = Response
                 .status(httpsStatus)
                 .entity(pokemon)
                 .build();
+        return response;
     }
 
     /**
@@ -62,11 +65,14 @@ public class PokemonService {
     public Response insertPokemon(
             @Valid @BeanParam Pokemon pokemon,
             @Pattern(regexp="ID-\\d{1,3}")
-            @FormParam("typID") String typID
+            @FormParam("trainerID") String trainerID,
+            @FormParam("typIDList") List<String> typIDList
 
     ){
 
-        pokemon.setTypID(typID);
+        pokemon.setPokemonID(ID.randomID().toString());
+        pokemon.setTrainerID(trainerID);
+        pokemon.setTypIDListWithList(typIDList);
         DataHandler.insertPokemon(pokemon);
         return Response
                 .status(200)
@@ -84,7 +90,9 @@ public class PokemonService {
     @Produces(MediaType.TEXT_PLAIN)
     public Response updatePokemon(
             @Valid @BeanParam Pokemon pokemon,
-            @FormParam("typID") String typID
+            @Pattern(regexp="ID-\\d{1,3}")
+            @FormParam("trainerID") String trainerID,
+            @FormParam("typIDList") List<String> typIDList
 
     ){
         int httpStatus = 200;
@@ -94,8 +102,8 @@ public class PokemonService {
             oldPokemon.setGroesse(pokemon.getGroesse());
             oldPokemon.setMegaEvolution(pokemon.MegaEvolution());
             oldPokemon.setTrainerID(pokemon.getTrainerID());
-            oldPokemon.setTypID(pokemon.getTyp().getTypID());
-
+            oldPokemon.setTypList(pokemon.getTypList());
+            oldPokemon.setTypIDListWithList(typIDList);
             DataHandler.updatePokemon();
         }else {
             httpStatus = 410;

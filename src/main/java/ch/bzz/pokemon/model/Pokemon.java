@@ -8,18 +8,15 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import javax.ws.rs.FormParam;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 
 /**
  * a Pakemon
  */
 public class Pokemon {
-    @JsonIgnore
-    private Typ typ;
-    @JsonIgnore
-    private Trainer trainer;
-
     @FormParam("pokemonID")
     @Pattern(regexp = "ID-\\d{1,3}")
     @NotEmpty
@@ -39,26 +36,67 @@ public class Pokemon {
     @DecimalMin("20.0")
     private double groesse;
 
+    @JsonIgnore
+    private ArrayList<Typ> typList = new ArrayList<Typ>();
+    @JsonIgnore
+    private Trainer trainer;
 
-    public Typ getTyp() {
-        return typ;
+
+    /**
+     * sets the songList with a ArrayList with UUIDs
+     * @param typIDList
+     */
+    public void setTypIDList(ArrayList<String> typIDList){
+        ListIterator<String> iterator = typIDList.listIterator();
+        while (iterator.hasNext()){
+            Typ typ = DataHandler.readTypByID(iterator.next());
+            typList.add(typ);
+        }
     }
 
-    public void setTyp(Typ typ) {
-        this.typ = typ;
+    /**
+     * gets songUUIDList (ArrayList of the songUUIDs)
+     * @return
+     */
+    public ArrayList<String> getTypIDList(){
+        ArrayList<String> typIDList = new ArrayList<>();
+        ListIterator<Typ> iterator = typList.listIterator();
+        while (iterator.hasNext()){
+            String typID = iterator.next().getTypID();
+            typIDList.add(typID);
+        }
+        return typIDList;
     }
 
-    public void setTypID(String typID) {
-        setTyp( new Typ());
-        Typ typ = DataHandler.readTypByID(typID);
-        getTyp().setTypID(typID);
-        getTyp().setTyp(typ.getTyp());
+    /**
+     * sets songUUIList (ArrayList) with a List
+     * @param typIDList
+     */
+    public void setTypIDListWithList(List<String> typIDList){
+        ArrayList<String> arrayList = new ArrayList<>();
+        ListIterator<String> iterator = typIDList.listIterator();
+        while (iterator.hasNext()){
+            arrayList.add(iterator.next());
+        }
+        setTypIDList(arrayList);
+    }
 
+    /**
+     * gets songList
+     * @return
+     */
+    public ArrayList<Typ> getTypList() {
+        return typList;
     }
-    public String getTypID(){
-        if (getTyp()== null)return null;
-        return getTyp().getTypID();
+
+    /**
+     * sets songList
+     * @param typList
+     */
+    public void setTypList(ArrayList<Typ> typList) {
+        this.typList = typList;
     }
+
     /**
 
     /**
@@ -76,8 +114,7 @@ public class Pokemon {
     public void setTrainerID(String trainerID) {
         setTrainer( new Trainer());
         Trainer trainer = DataHandler.readTrainerByID(trainerID);
-        getTrainer().setTrainerID(trainerID);
-        getTrainer().setTrainer(trainer.getTrainer());
+        this.trainer = trainer;
 
     }
     /**
@@ -130,22 +167,7 @@ public class Pokemon {
      *
      * @return value of pokemonID
      */
-    public String getPokemonID() {
-        return pokemonID;
-    }
-    /**
-     * sets pokemonID
-     *
-     * @param pokemonID the value to set
-     */
-    public void setPokemonID(String pokemonID) {
-        this.pokemonID = pokemonID;
-    }
-    /**
-     * gets name
-     *
-     * @return value of name
-     */
+
     public String getName() {
         return name;
     }
@@ -158,4 +180,11 @@ public class Pokemon {
         this.name = name;
     }
 
+    public String getPokemonID() {
+        return pokemonID;
+    }
+
+    public void setPokemonID(String pokemonID) {
+        this.pokemonID = pokemonID;
+    }
 }

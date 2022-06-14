@@ -21,12 +21,7 @@ public class Typ {
     @Pattern(regexp = "ID-\\d{1,2}" )
     private String typID;
 
-    /**
-     * default constructor
-     */
-    public Typ() {
-        setPokemonList(new ArrayList<>());
-    }
+
     /**
      * gets typ
      *
