@@ -1,21 +1,20 @@
-[ {
+[ 
+{
   "pokemonUUID" : "ID-1",
   "name" : "Bisasam",
-  "megaEvolution" : false,
-  "groesse" : 0.7,
+  "groesse" : 1.0,
   "typUUID" : "ID-10",
   "trainerUUID" : "ID-1"
-},{
+},
+{
   "pokemonUUID" : "ID-2",
   "name" : "Bisaknosp",
-  "megaEvolution" : false,
   "groesse" : 1.0,
   "typUUID" : "ID-10",
   "trainerUUID" : "ID-1"
 }, {
   "pokemonUUID" : "ID-3",
   "name" : "Bisaflor",
-  "megaEvolution" : true,
   "groesse" : 2.0,
   "typUUID" : "ID-10",
   "trainerUUID" : "ID-1"

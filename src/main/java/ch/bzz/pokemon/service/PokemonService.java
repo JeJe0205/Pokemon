@@ -66,7 +66,6 @@ public class PokemonService {
             @FormParam("typID") String typID
 
     ){
-
         pokemon.setTypUUID(UUID.randomUUID().toString());
         DataHandler.insertPokemon(pokemon);
         return Response

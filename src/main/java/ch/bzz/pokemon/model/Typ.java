@@ -14,7 +14,7 @@ public class Typ {
     private List<Pokemon> pokemonList;
     @FormParam("typ")
     @NotEmpty
-    @Size(min=1, max=20)
+    @Size(min=2, max=20)
     private String typ;
     @FormParam("typUUID")
     @NotEmpty
@@ -59,7 +59,7 @@ public class Typ {
     /**
      * sets publisherUUID
      *
-     * @param typID the value to set
+     * @param typUUID the value to set
      */
 
     public void setTypUUID(String typUUID) {

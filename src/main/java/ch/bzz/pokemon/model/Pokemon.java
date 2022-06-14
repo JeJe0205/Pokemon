@@ -12,7 +12,7 @@ import java.util.List;
 
 
 /**
- * a Pakemon
+ * a Pokemon
  */
 public class Pokemon {
     @JsonIgnore
@@ -136,9 +136,9 @@ public class Pokemon {
     /**
      * sets pokemonID
      *
-     * @param pokemonID the value to set
+     * @param pokemonUUID the value to set
      */
-    public void setPokemonUUID(String pokemonID) {
+    public void setPokemonUUID(String pokemonUUID) {
         this.pokemonUUID = pokemonUUID;
     }
     /**
