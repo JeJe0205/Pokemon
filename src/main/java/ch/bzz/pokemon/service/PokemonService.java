@@ -26,10 +26,16 @@ public class PokemonService {
     public Response listPokemons(
             @CookieParam("userRole") String userRole
     ){
-        List<Pokemon> pokemonList = DataHandler.readAllPokemons();
+        int httpsStatus;
+        if (userRole == null || userRole.equals("guest")){
+            httpsStatus = 403;
+        }else {
+            httpsStatus = 200;
+            List<Pokemon> pokemonList = DataHandler.readAllPokemons();
+        }
         return Response
                 .status(200)
-                .entity(pokemonList)
+                .entity(httpsStatus)
                 .build();
     }
 

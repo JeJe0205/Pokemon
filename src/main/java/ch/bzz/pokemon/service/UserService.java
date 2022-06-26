@@ -32,7 +32,7 @@ public class UserService {
                 "userRole",
                 user.getRole(),
                 "/",
-                "", //TODO
+                "",
                 "Login-Cookie",
                 600,
                 false
@@ -51,9 +51,20 @@ public class UserService {
     @Path("logout")
     @Produces(MediaType.TEXT_PLAIN)
     public Response logout(){
+        NewCookie cookie = new NewCookie(
+                "userRole",
+                "guest",
+                "/",
+                "",
+                "Login-Cookie",
+                1,
+                false
+
+        );
         Response response = Response
                 .status(200)
                 .entity("")
+                .cookie(cookie)
                 .build();
         return response;
     }
