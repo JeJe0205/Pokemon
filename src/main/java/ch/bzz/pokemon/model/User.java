@@ -7,6 +7,13 @@ public class User {
     private String role;
 
     /**
+     * default constructor
+     */
+    public User(){
+        setRole("guest");
+    }
+
+    /**
      * gets userUUID
      *
      * @return value of userUUID
