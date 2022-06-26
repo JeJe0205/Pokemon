@@ -23,7 +23,9 @@ public class PokemonService {
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listPokemons(){
+    public Response listPokemons(
+            @CookieParam("userRole") String userRole
+    ){
         List<Pokemon> pokemonList = DataHandler.readAllPokemons();
         return Response
                 .status(200)
