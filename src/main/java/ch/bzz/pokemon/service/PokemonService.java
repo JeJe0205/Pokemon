@@ -2,6 +2,8 @@ package ch.bzz.pokemon.service;
 
 import ch.bzz.pokemon.data.DataHandler;
 import ch.bzz.pokemon.model.Pokemon;
+import ch.bzz.pokemon.model.Trainer;
+import ch.bzz.pokemon.model.Typ;
 import com.sun.xml.internal.bind.v2.model.core.ID;
 
 import javax.validation.Valid;
@@ -26,10 +28,10 @@ public class PokemonService {
     public Response listPokemons(
             @CookieParam("userRole") String userRole
     ){
-        int httpsStatus;
+        int httpsStatus = 0;
         if (userRole == null || userRole.equals("guest")){
             httpsStatus = 403;
-        }else {
+        }else if (userRole.equals("admin") || userRole.equals("user")) {
             httpsStatus = 200;
             List<Pokemon> pokemonList = DataHandler.readAllPokemons();
         }
@@ -45,18 +47,20 @@ public class PokemonService {
     public Response readPokemon(
             @NotEmpty
             @Pattern(regexp="ID-\\d{1,3}")
-            @QueryParam("uuid") String pokemonUUID
+            @QueryParam("uuid") String pokemonUUID,
+            @CookieParam("userRole") String userRole
+
     ){
-        Pokemon pokemon = DataHandler.readPokemonByUUID(pokemonUUID);
-        int httpsStatus;
-        if (pokemon == null){
-            httpsStatus = 404;
-        }else {
-            httpsStatus = 288;
+        int httpsStatus = 0;
+        if (userRole == null || userRole.equals("guest")){
+            httpsStatus = 403;
+        }else if (userRole.equals("admin") || userRole.equals("user")){
+            httpsStatus = 200;
+            Pokemon pokemon = DataHandler.readPokemonByUUID(pokemonUUID);
         }
         return Response
-                .status(httpsStatus)
-                .entity(pokemon)
+                .status(200)
+                .entity(httpsStatus)
                 .build();
     }
 
@@ -71,14 +75,21 @@ public class PokemonService {
     public Response insertPokemon(
             @Valid @BeanParam Pokemon pokemon,
             @Pattern(regexp="ID-\\d{1,3}")
-            @FormParam("typID") String typID
+            @FormParam("typID") String typID,
+            @CookieParam("userRole") String userRole
 
     ){
-        pokemon.setTypUUID(UUID.randomUUID().toString());
-        DataHandler.insertPokemon(pokemon);
+        int httpsStatus;
+        if (userRole == null || !userRole.equals("admin")){
+            httpsStatus = 403;
+        }else {
+            httpsStatus = 200;
+            pokemon.setTypUUID(UUID.randomUUID().toString());
+            DataHandler.insertPokemon(pokemon);
+        }
         return Response
                 .status(200)
-                .entity("")
+                .entity(httpsStatus)
                 .build();
     }
 
@@ -92,9 +103,13 @@ public class PokemonService {
     @Produces(MediaType.TEXT_PLAIN)
     public Response updatePokemon(
             @Valid @BeanParam Pokemon pokemon,
-            @FormParam("typUUID") String typUUID
+            @FormParam("typUUID") String typUUID,
+            @CookieParam("userRole") String userRole
 
     ){
+        if (userRole == null || !userRole.equals("admin")) {
+            return Response.status(403).entity("").build();
+        }
         int httpStatus = 200;
         Pokemon oldPokemon = DataHandler.readPokemonByUUID(pokemon.getPokemonUUID());
         if (oldPokemon != null){
@@ -114,6 +129,7 @@ public class PokemonService {
                 .build();
     }
 
+
     /**
      * delets a pokemon indentified by its uuid
      * @param pokemonUUID the key
@@ -125,8 +141,12 @@ public class PokemonService {
     public Response deletePokemon(
             @NotEmpty
             @Pattern(regexp="ID-\\d{1,3}")
-            @QueryParam("uuid") String pokemonUUID
-    ){
+            @QueryParam("uuid") String pokemonUUID,
+            @CookieParam("userRole") String userRole
+    )
+    {if (userRole == null || !userRole.equals("admin")) {
+        return Response.status(403).entity("").build();
+    }
         int httpStatus = 200;
         if (!DataHandler.deletePokemon(pokemonUUID)){
             httpStatus = 410;

@@ -14,7 +14,7 @@ function sendLogin(form){
 
     })
         .done(function (){
-        window.location.href = "./pokemon.html";
+        window.location.href = "./index.html";
     })
         .fail(function (xhr, status, errorThrown){
             if (xhr.status == 404){
@@ -34,7 +34,7 @@ function sendLogoff(){
 
         })
         .done(function (){
-            window.location.href = "./login.html";
+            window.location.href = "./index.html";
         })
         .fail(function (xhr, status, errorThrown){
 
