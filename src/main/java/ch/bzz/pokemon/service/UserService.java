@@ -16,6 +16,7 @@ import java.awt.*;
 @Path("user")
 public class UserService {
     @POST
+    @Path("login")
     @Produces(MediaType.TEXT_PLAIN)
     public Response login(
             @FormParam("username") String username,
@@ -23,6 +24,7 @@ public class UserService {
     ){
         int httpStatus;
         User user = UserData.findUser(username,passwort);
+        System.out.println(user);
         if (user == null || user.getRole() == null || user.getRole().equals("guest")){
             httpStatus = 404;
         }else {

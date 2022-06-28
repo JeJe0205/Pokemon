@@ -1,44 +1,27 @@
-$(document).ready(function (){
-    $("#loginForm").submit(sendLogin);
-    $("#logoff").click(sendLogoff);
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector("#loginform").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const username = document.querySelector("#username").value;
+        const passwort = document.querySelector("#passwort").value;
+        const url = "./resource/user/login";
+        const options = {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: `username=${username}&passwort=${passwort}`,
+        };
+        fetch(url, options)
+            .then((response) => {
+                if (response.status == 200) {
+                    window.location.href =
+                        "./index.html";
+                } else {
+                    document.querySelector("#message").innerHTML = "Invalid username or passwort";
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    });
 });
-
-function sendLogin(form){
-    form.preventDefault();
-    $
-        .ajax({
-            url: "./restore/user/login",
-            dataType: "text",
-            type: "POST",
-            data: $("#loginForm").serialize()
-
-    })
-        .done(function (){
-        window.location.href = "./index.html";
-    })
-        .fail(function (xhr, status, errorThrown){
-            if (xhr.status == 404){
-                $("#message").text("Benutzername/Passwort unbekannt");
-            }else {
-                $("#message").text("Es ist ein Fehler aufgetreten")
-            }
-        })
-}
-
-function sendLogoff(){
-    $
-        .ajax({
-            url: "./restore/user/logoff",
-            dataType: "text",
-            type: "DELETE",
-
-        })
-        .done(function (){
-            window.location.href = "./logout.html";
-        })
-        .fail(function (xhr, status, errorThrown){
-
-        })
-}3
-
-
