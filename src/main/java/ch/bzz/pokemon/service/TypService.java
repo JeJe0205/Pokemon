@@ -20,7 +20,7 @@ import java.util.UUID;
 public class TypService {
     /**
      * reads a list of all types
-     * @return
+     * @return a list of all types
      */
     @GET
     @Path("list")
@@ -68,8 +68,8 @@ public class TypService {
     }
 
     /**
-     *
-     * @return Response
+     * create a typ by UUID
+     * @return response
      */
     @POST
     @Path("create")
@@ -94,7 +94,7 @@ public class TypService {
     }
 
     /**
-     *
+     * updates a typ by UUID
      * @return Response
      */
     @POST
@@ -123,7 +123,7 @@ public class TypService {
     }
 
     /**
-     * delets a pokemon indentified by its uuid
+     * delets a typ indentified by its uuid
      * @param typUUID the key
      * @return Response
      */

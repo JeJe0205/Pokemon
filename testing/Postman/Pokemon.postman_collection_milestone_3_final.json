@@ -1,0 +1,3905 @@
+{
+	"info": {
+		"_postman_id": "f8fdedc2-2de6-4d8d-ae72-9363ff5dc17e",
+		"name": "Pokemon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pokemon",
+			"item": [
+				{
+					"name": "Attributes",
+					"item": [
+						{
+							"name": "2.1.1 name not found",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.1.2 name to short",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "lol",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.1.3 name to long",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "loloolollolololololololollol",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/create?",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"create"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.2.1 megaEvolution not found",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "megaEvolution",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"create"
+									],
+									"query": [
+										{
+											"key": "megaEvolution",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.2.2 megaEvolution to short",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/create?megaEvolution=lol",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"create"
+									],
+									"query": [
+										{
+											"key": "megaEvolution",
+											"value": "lol"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.2.3 megaEvolution to long",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/create?megaEvolution=zulangertext",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"create"
+									],
+									"query": [
+										{
+											"key": "megaEvolution",
+											"value": "zulangertext"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.3.1 groesse not found",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "groesse",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.3.2 groesse to short",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "groesse",
+											"value": "0.01",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"create"
+									],
+									"query": [
+										{
+											"key": "groesse",
+											"value": "0.01",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.3.3 groesse to long",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "groesse",
+											"value": "21",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"create"
+									],
+									"query": [
+										{
+											"key": "groesse",
+											"value": "21",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.4.1 pokemonID not found",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "pokemonUUID",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"create"
+									],
+									"query": [
+										{
+											"key": "pokemnID",
+											"value": "1",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.4.2 pokemonID valid",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "pokemonUUID",
+											"value": "ID-1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"create"
+									],
+									"query": [
+										{
+											"key": "pokemonID",
+											"value": "ID-1",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.4.3 pokemonID not valid",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "pokemonUUID",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "1.0 list all Pokemons",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"pokemon",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.1 read Pokemon",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/read?uuid=ID-1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"pokemon",
+								"read"
+							],
+							"query": [
+								{
+									"key": "uuid",
+									"value": "ID-1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.1.2 read Pokemon not found",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/read?uuid=ID-10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"pokemon",
+								"read"
+							],
+							"query": [
+								{
+									"key": "uuid",
+									"value": "ID-10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.2 delete Pokemon",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/delete?uuid=ID-1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"pokemon",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "uuid",
+									"value": "ID-1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.2 delete Pokemon not found",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/delete?uuid=Id-10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"pokemon",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "uuid",
+									"value": "Id-10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.3 insert Pokemon",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Glumanda",
+									"type": "text"
+								},
+								{
+									"key": "megaEvolution",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "groesse",
+									"value": "0.7",
+									"type": "text"
+								},
+								{
+									"key": "typUUID",
+									"value": "ID-8",
+									"type": "text"
+								},
+								{
+									"key": "trainerUUID",
+									"value": "ID-1",
+									"type": "text"
+								},
+								{
+									"key": "pokemonUUID",
+									"value": "ID-4",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"pokemon",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.4 update Pokemon",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Bisasam",
+									"type": "text"
+								},
+								{
+									"key": "megaEvolution",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "groesse",
+									"value": "0.7",
+									"type": "text"
+								},
+								{
+									"key": "typUUID",
+									"value": "ID-10",
+									"type": "text"
+								},
+								{
+									"key": "trainerUUID",
+									"value": "ID-1",
+									"type": "text"
+								},
+								{
+									"key": "pokemonUUID",
+									"value": "ID-1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"pokemon",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.4.1 update Pokemon not found",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Bisasam",
+									"type": "text"
+								},
+								{
+									"key": "megaEvolution",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "groesse",
+									"value": "0.7",
+									"type": "text"
+								},
+								{
+									"key": "typUUID",
+									"value": "ID-10",
+									"type": "text"
+								},
+								{
+									"key": "trainerUUID",
+									"value": "ID-1",
+									"type": "text"
+								},
+								{
+									"key": "pokemonUUID",
+									"value": "ID-10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"pokemon",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Typ",
+			"item": [
+				{
+					"name": "Attributes",
+					"item": [
+						{
+							"name": "2.1.1 typID not found",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "typUUID",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"typ",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.1.2 typID valid",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "typUUID",
+											"value": "ID-10",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"typ",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.1.3 typID not valid",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/create?typUUID=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"typ",
+										"create"
+									],
+									"query": [
+										{
+											"key": "typUUID",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.2.1 typ not found",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "typ",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"typ",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.2.2 typ to short",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/create?typ=l",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"typ",
+										"create"
+									],
+									"query": [
+										{
+											"key": "typ",
+											"value": "l"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.2.3 typ to long",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "typ",
+											"value": "looooooooooooooooooooooooool",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"typ",
+										"create"
+									],
+									"query": [
+										{
+											"key": "http://localhost:8080/Pokemon-1.0/resource/typ/create",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "2.0 list all Types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"typ",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.1 read typ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/read?uuid=ID-8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"typ",
+								"read"
+							],
+							"query": [
+								{
+									"key": "uuid",
+									"value": "ID-8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.1.2 read typ not found",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/read?uuid=ID-1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"typ",
+								"read"
+							],
+							"query": [
+								{
+									"key": "uuid",
+									"value": "ID-1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.2 delete Typ Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/delete?uuid=ID-8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"typ",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "uuid",
+									"value": "ID-8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.2.2 delete Typ not found",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/delete?uuid=ID-1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"typ",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "uuid",
+									"value": "ID-1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.3 insert Typ",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "typUUID",
+									"value": "ID-10",
+									"type": "text"
+								},
+								{
+									"key": "typ",
+									"value": "Pflanze",
+									"type": "text"
+								},
+								{
+									"key": "groesse",
+									"value": "0.7",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "typID",
+									"value": "ID-8",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "trainerID",
+									"value": "ID-1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "pokemonID",
+									"value": "ID-4",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"typ",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.4 update Typ",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "typUUID",
+									"value": "ID-10",
+									"type": "text"
+								},
+								{
+									"key": "typ",
+									"value": "Pflanze",
+									"type": "text"
+								},
+								{
+									"key": "groesse",
+									"value": "0.7",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "typID",
+									"value": "ID-10",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "trainerID",
+									"value": "ID-1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "pokemonID",
+									"value": "ID-1",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"typ",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.4.1 update Typ not found",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "typUUID",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "typ",
+									"value": "Pflanze",
+									"type": "text"
+								},
+								{
+									"key": "groesse",
+									"value": "0.7",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "typID",
+									"value": "ID-10",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "trainerID",
+									"value": "ID-1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "pokemonID",
+									"value": "ID-1",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"typ",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trainer",
+			"item": [
+				{
+					"name": "Attributes",
+					"item": [
+						{
+							"name": "2.1.1 trainerID not found",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "trainerUUID",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"trainer",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.1.2 trainerID valid",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "trainerUUID",
+											"value": "ID-1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"trainer",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.1.3 trainerID not valid",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "trainerUUID",
+											"value": "12",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"trainer",
+										"create"
+									],
+									"query": [
+										{
+											"key": "trainerUUID",
+											"value": "121",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.2.1 trainer not found",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "trainer",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"trainer",
+										"create"
+									],
+									"query": [
+										{
+											"key": "trainer",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.2.2 trainer to short",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "trainer",
+											"value": "l",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"trainer",
+										"create"
+									],
+									"query": [
+										{
+											"key": "trainer",
+											"value": "l",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.2.3 trainer to long",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "trainer",
+											"value": "looooooooooooooooooooooooooooooooooooooooooooooooooooooool",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"trainer",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.3.1 ort not found",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ort",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"trainer",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.3.2 ort to short",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ort",
+											"value": "e",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"trainer",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.3.3 ort to long",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ort",
+											"value": "looooooooooooooooooooooooooooooooooooooooooooooooooooool",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"trainer",
+										"create"
+									],
+									"query": [
+										{
+											"key": "ort",
+											"value": "looooooooooooooooooooooooooooooooooooooooooooooool",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "3.0 list all Trainers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"trainer",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.1 read Trainer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/read?uuid=ID-1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"trainer",
+								"read"
+							],
+							"query": [
+								{
+									"key": "uuid",
+									"value": "ID-1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.1.2read Trainer not found",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/read?uuid=ID-10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"trainer",
+								"read"
+							],
+							"query": [
+								{
+									"key": "uuid",
+									"value": "ID-10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.2 delete Trainer Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/delete?uuid=ID-3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"trainer",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "uuid",
+									"value": "ID-3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.2.2 delete Trainer not found",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/delete?uuid=ID-91",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"trainer",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "uuid",
+									"value": "ID-91"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.3 insert Trainer Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "trainerUUID",
+									"value": "ID-26",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Ash",
+									"type": "text"
+								},
+								{
+									"key": "ort",
+									"value": "Alabastia",
+									"type": "text"
+								},
+								{
+									"key": "typID",
+									"value": "ID-8",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "trainerID",
+									"value": "ID-1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "pokemonID",
+									"value": "ID-4",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"trainer",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.4 update Trainer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "trainerUUID",
+									"value": "ID-1",
+									"type": "text"
+								},
+								{
+									"key": "trainer",
+									"value": "Ash",
+									"type": "text"
+								},
+								{
+									"key": "ort",
+									"value": "Alabastia",
+									"type": "text"
+								},
+								{
+									"key": "typID",
+									"value": "ID-10",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "trainerID",
+									"value": "ID-1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "pokemonID",
+									"value": "ID-1",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"trainer",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.4.1 update Trainer not found",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "trainerUUID",
+									"value": "ID-20",
+									"type": "text"
+								},
+								{
+									"key": "trainer",
+									"value": "Ash",
+									"type": "text"
+								},
+								{
+									"key": "ort",
+									"value": "Alabastia",
+									"type": "text"
+								},
+								{
+									"key": "typID",
+									"value": "ID-10",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "trainerID",
+									"value": "ID-1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "pokemonID",
+									"value": "ID-1",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"trainer",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test",
+			"item": [
+				{
+					"name": "0.1 Testservice",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Pokemon-1.0/resource/test/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Pokemon-1.0",
+								"resource",
+								"test",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login / Logoff",
+			"item": [
+				{
+					"name": "admin",
+					"item": [
+						{
+							"name": "login as admin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "text"
+										},
+										{
+											"key": "passwort",
+											"value": "admin",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin can list trainer",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"trainer",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin can read  trainer",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/read?uuid=ID-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"trainer",
+										"read"
+									],
+									"query": [
+										{
+											"key": "uuid",
+											"value": "ID-1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin can delete trainer",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/delete?uuid=ID-3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"trainer",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "uuid",
+											"value": "ID-3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin can insert trainer",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "trainerUUID",
+											"value": "ID-26",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Ash",
+											"type": "text"
+										},
+										{
+											"key": "ort",
+											"value": "Alabastia",
+											"type": "text"
+										},
+										{
+											"key": "typID",
+											"value": "ID-8",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "trainerID",
+											"value": "ID-1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "pokemonID",
+											"value": "ID-4",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"trainer",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin can update trainer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "trainerUUID",
+											"value": "ID-1",
+											"type": "text"
+										},
+										{
+											"key": "trainer",
+											"value": "Ash",
+											"type": "text"
+										},
+										{
+											"key": "ort",
+											"value": "Alabastia",
+											"type": "text"
+										},
+										{
+											"key": "typID",
+											"value": "ID-10",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "trainerID",
+											"value": "ID-1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "pokemonID",
+											"value": "ID-1",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"trainer",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin can list typ",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"typ",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin can read typ",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/read?uuid=ID-8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"typ",
+										"read"
+									],
+									"query": [
+										{
+											"key": "uuid",
+											"value": "ID-8"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin can delete typ",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/delete?uuid=ID-8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"typ",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "uuid",
+											"value": "ID-8"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin can insert typ",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "typUUID",
+											"value": "ID-10",
+											"type": "text"
+										},
+										{
+											"key": "typ",
+											"value": "Pflanze",
+											"type": "text"
+										},
+										{
+											"key": "groesse",
+											"value": "0.7",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "typID",
+											"value": "ID-8",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "trainerID",
+											"value": "ID-1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "pokemonID",
+											"value": "ID-4",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"typ",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin can update typ",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "typUUID",
+											"value": "ID-10",
+											"type": "text"
+										},
+										{
+											"key": "typ",
+											"value": "Pflanze",
+											"type": "text"
+										},
+										{
+											"key": "groesse",
+											"value": "0.7",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "typID",
+											"value": "ID-10",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "trainerID",
+											"value": "ID-1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "pokemonID",
+											"value": "ID-1",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"typ",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin can list pokemon",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin can read pokemon",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/read?uuid=ID-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"read"
+									],
+									"query": [
+										{
+											"key": "uuid",
+											"value": "ID-1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin can delete pokemon",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/delete?uuid=ID-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "uuid",
+											"value": "ID-1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin can insert pokemon",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Glumanda",
+											"type": "text"
+										},
+										{
+											"key": "megaEvolution",
+											"value": "false",
+											"type": "text"
+										},
+										{
+											"key": "groesse",
+											"value": "0.7",
+											"type": "text"
+										},
+										{
+											"key": "typUUID",
+											"value": "ID-8",
+											"type": "text"
+										},
+										{
+											"key": "trainerUUID",
+											"value": "ID-1",
+											"type": "text"
+										},
+										{
+											"key": "pokemonUUID",
+											"value": "ID-4",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin can update pokemon",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Bisasam",
+											"type": "text"
+										},
+										{
+											"key": "megaEvolution",
+											"value": "false",
+											"type": "text"
+										},
+										{
+											"key": "groesse",
+											"value": "0.7",
+											"type": "text"
+										},
+										{
+											"key": "typUUID",
+											"value": "ID-10",
+											"type": "text"
+										},
+										{
+											"key": "trainerUUID",
+											"value": "ID-1",
+											"type": "text"
+										},
+										{
+											"key": "pokemonUUID",
+											"value": "ID-1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logout",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "text"
+										},
+										{
+											"key": "passwort",
+											"value": "admin",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "login as user",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "user",
+											"type": "text"
+										},
+										{
+											"key": "passwort",
+											"value": "user",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user can list pokemon",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user can read pokemon",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/read?uuid=ID-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"read"
+									],
+									"query": [
+										{
+											"key": "uuid",
+											"value": "ID-1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user can't delete pokemon",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/delete?uuid=ID-2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "uuid",
+											"value": "ID-2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user can't insert pokemon",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Glumanda",
+											"type": "text"
+										},
+										{
+											"key": "megaEvolution",
+											"value": "false",
+											"type": "text"
+										},
+										{
+											"key": "groesse",
+											"value": "0.7",
+											"type": "text"
+										},
+										{
+											"key": "typUUID",
+											"value": "ID-8",
+											"type": "text"
+										},
+										{
+											"key": "trainerUUID",
+											"value": "ID-1",
+											"type": "text"
+										},
+										{
+											"key": "pokemonUUID",
+											"value": "ID-4",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user can't update pokemon",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Bisasam",
+											"type": "text"
+										},
+										{
+											"key": "megaEvolution",
+											"value": "false",
+											"type": "text"
+										},
+										{
+											"key": "groesse",
+											"value": "0.7",
+											"type": "text"
+										},
+										{
+											"key": "typUUID",
+											"value": "ID-10",
+											"type": "text"
+										},
+										{
+											"key": "trainerUUID",
+											"value": "ID-1",
+											"type": "text"
+										},
+										{
+											"key": "pokemonUUID",
+											"value": "ID-1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user can list typ",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"typ",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user can read typ",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/read?uuid=ID-8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"typ",
+										"read"
+									],
+									"query": [
+										{
+											"key": "uuid",
+											"value": "ID-8"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user can't delete typ",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/delete?uuid=ID-8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"typ",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "uuid",
+											"value": "ID-8"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user can't insert typ",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "typUUID",
+											"value": "ID-10",
+											"type": "text"
+										},
+										{
+											"key": "typ",
+											"value": "Pflanze",
+											"type": "text"
+										},
+										{
+											"key": "groesse",
+											"value": "0.7",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "typID",
+											"value": "ID-8",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "trainerID",
+											"value": "ID-1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "pokemonID",
+											"value": "ID-4",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"typ",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user can't update typ",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "typUUID",
+											"value": "ID-10",
+											"type": "text"
+										},
+										{
+											"key": "typ",
+											"value": "Pflanze",
+											"type": "text"
+										},
+										{
+											"key": "groesse",
+											"value": "0.7",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "typID",
+											"value": "ID-10",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "trainerID",
+											"value": "ID-1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "pokemonID",
+											"value": "ID-1",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"typ",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user can list trainer",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"trainer",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user can read trainer",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/read?uuid=ID-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"trainer",
+										"read"
+									],
+									"query": [
+										{
+											"key": "uuid",
+											"value": "ID-1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user can't delete trainer",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/delete?uuid=ID-3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"trainer",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "uuid",
+											"value": "ID-3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user can't insert trainer",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "trainerUUID",
+											"value": "ID-26",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Ash",
+											"type": "text"
+										},
+										{
+											"key": "ort",
+											"value": "Alabastia",
+											"type": "text"
+										},
+										{
+											"key": "typID",
+											"value": "ID-8",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "trainerID",
+											"value": "ID-1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "pokemonID",
+											"value": "ID-4",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"trainer",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user can't update trainer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "trainerUUID",
+											"value": "ID-1",
+											"type": "text"
+										},
+										{
+											"key": "trainer",
+											"value": "Ash",
+											"type": "text"
+										},
+										{
+											"key": "ort",
+											"value": "Alabastia",
+											"type": "text"
+										},
+										{
+											"key": "typID",
+											"value": "ID-10",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "trainerID",
+											"value": "ID-1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "pokemonID",
+											"value": "ID-1",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"trainer",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logout",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "text"
+										},
+										{
+											"key": "passwort",
+											"value": "admin",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "guest",
+					"item": [
+						{
+							"name": "login as guest",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "guest",
+											"type": "text"
+										},
+										{
+											"key": "passwort",
+											"value": "guest",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "guest can't list pokemon",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "guest can't read pokemon",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/read?uuid=ID-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"read"
+									],
+									"query": [
+										{
+											"key": "uuid",
+											"value": "ID-1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "guest can't delete pokemon",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/delete?uuid=ID-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "uuid",
+											"value": "ID-1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "guest can't insert pokemon",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Glumanda",
+											"type": "text"
+										},
+										{
+											"key": "megaEvolution",
+											"value": "false",
+											"type": "text"
+										},
+										{
+											"key": "groesse",
+											"value": "0.7",
+											"type": "text"
+										},
+										{
+											"key": "typUUID",
+											"value": "ID-8",
+											"type": "text"
+										},
+										{
+											"key": "trainerUUID",
+											"value": "ID-1",
+											"type": "text"
+										},
+										{
+											"key": "pokemonUUID",
+											"value": "ID-4",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "guest can't update pokemon",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Bisasam",
+											"type": "text"
+										},
+										{
+											"key": "megaEvolution",
+											"value": "false",
+											"type": "text"
+										},
+										{
+											"key": "groesse",
+											"value": "0.7",
+											"type": "text"
+										},
+										{
+											"key": "typUUID",
+											"value": "ID-10",
+											"type": "text"
+										},
+										{
+											"key": "trainerUUID",
+											"value": "ID-1",
+											"type": "text"
+										},
+										{
+											"key": "pokemonUUID",
+											"value": "ID-1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/pokemon/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"pokemon",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "guest can't list typ",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"typ",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "guest can't read typ",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/read?uuid=ID-8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"typ",
+										"read"
+									],
+									"query": [
+										{
+											"key": "uuid",
+											"value": "ID-8"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "guest can't delete typ",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/delete?uuid=ID-8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"typ",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "uuid",
+											"value": "ID-8"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "guest can't insert typ",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "typUUID",
+											"value": "ID-10",
+											"type": "text"
+										},
+										{
+											"key": "typ",
+											"value": "Pflanze",
+											"type": "text"
+										},
+										{
+											"key": "groesse",
+											"value": "0.7",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "typID",
+											"value": "ID-8",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "trainerID",
+											"value": "ID-1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "pokemonID",
+											"value": "ID-4",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"typ",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "guest can't update typ",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "typUUID",
+											"value": "ID-10",
+											"type": "text"
+										},
+										{
+											"key": "typ",
+											"value": "Pflanze",
+											"type": "text"
+										},
+										{
+											"key": "groesse",
+											"value": "0.7",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "typID",
+											"value": "ID-10",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "trainerID",
+											"value": "ID-1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "pokemonID",
+											"value": "ID-1",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/typ/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"typ",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "guest can't list trainer",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"trainer",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "guest can't read trainer",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/read?uuid=ID-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"trainer",
+										"read"
+									],
+									"query": [
+										{
+											"key": "uuid",
+											"value": "ID-1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "guest can't delete trainer",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/delete?uuid=ID-3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"trainer",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "uuid",
+											"value": "ID-3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "guest can't insert trainer",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "trainerUUID",
+											"value": "ID-26",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Ash",
+											"type": "text"
+										},
+										{
+											"key": "ort",
+											"value": "Alabastia",
+											"type": "text"
+										},
+										{
+											"key": "typID",
+											"value": "ID-8",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "trainerID",
+											"value": "ID-1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "pokemonID",
+											"value": "ID-4",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"trainer",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "guest can't update trainer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "trainerUUID",
+											"value": "ID-1",
+											"type": "text"
+										},
+										{
+											"key": "trainer",
+											"value": "Ash",
+											"type": "text"
+										},
+										{
+											"key": "ort",
+											"value": "Alabastia",
+											"type": "text"
+										},
+										{
+											"key": "typID",
+											"value": "ID-10",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "trainerID",
+											"value": "ID-1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "pokemonID",
+											"value": "ID-1",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Pokemon-1.0/resource/trainer/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Pokemon-1.0",
+										"resource",
+										"trainer",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

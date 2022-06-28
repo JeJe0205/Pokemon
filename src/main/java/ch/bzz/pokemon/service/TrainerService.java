@@ -64,8 +64,8 @@ public class TrainerService {  /**
     }
 
     /**
-     *
-     * @return Response
+     * Creates a Trainer by UUID
+     * @return response
      */
     @POST
     @Path("create")
@@ -91,7 +91,7 @@ public class TrainerService {  /**
 
 
     /**
-     *
+     * updates a trainer by UUID
      * @return Response
      */
     @POST

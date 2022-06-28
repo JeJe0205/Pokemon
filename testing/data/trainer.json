@@ -1,17 +1,9 @@
-[
-  {
-    "trainerUUID": "ID-1",
-    "trainer": "Ash",
-    "ort": "Alabastia"
-  },
-  {
-    "trainerUUID": "ID-2",
-    "trainer": "Misty",
-    "ort": "Azuria City"
-  },
-  {
-    "trainerUUID": "ID-3",
-    "trainer": "Rocko",
-    "ort": "Marmoria City"
-  }
-]
+[ {
+  "trainerUUID" : "ID-1",
+  "trainer" : "Ash",
+  "ort" : "Alabastia"
+}, {
+  "trainerUUID" : "ID-2",
+  "trainer" : "Misty",
+  "ort" : "Azuria City"
+} ]

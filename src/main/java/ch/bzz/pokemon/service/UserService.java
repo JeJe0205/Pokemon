@@ -15,6 +15,13 @@ import java.awt.*;
 
 @Path("user")
 public class UserService {
+
+    /**
+     * login service
+     * @param username the username of the user to be logged in
+     * @param passwort the password of the user to be logged in
+     * @return 200 if the user was logged in, 404 if the user was not found or the password was wrong
+     */
     @POST
     @Path("login")
     @Produces(MediaType.TEXT_PLAIN)
@@ -49,6 +56,10 @@ public class UserService {
         return response;
     }
 
+    /**
+     * logout service
+     * @return 200
+     */
     @DELETE
     @Path("logout")
     @Produces(MediaType.TEXT_PLAIN)

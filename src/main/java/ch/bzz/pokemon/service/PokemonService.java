@@ -41,6 +41,11 @@ public class PokemonService {
                 .build();
     }
 
+    /**
+     * Get a pokemon by pokemonUUID
+     * @param pokemonUUID
+     * @return pokemon
+     */
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
@@ -65,10 +70,9 @@ public class PokemonService {
     }
 
     /**
-     *
-     * @return Response
+     * Creates a pokemon by UUID
+     * @return response
      */
-
     @POST
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
@@ -94,7 +98,7 @@ public class PokemonService {
     }
 
     /**
-     *
+     * updates a pokemon by UUID
      * @return Response
      */
 

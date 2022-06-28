@@ -10,6 +10,12 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Finds the user with the given username
+ * @paramusername the username of the user to be found
+ * @parampasswort password of the user to be found
+ * @return if the user was found, the user is returned, otherwise null is returned
+ */
 public class UserData {
     private static final UserData instance = new UserData();
 
@@ -26,6 +32,10 @@ public class UserData {
         return user;
     }
 
+    /**
+     * Reads the user data from the JSON file
+     * @return the user data as a list of users
+     */
     private static List<User> readJson(){
         List<User> userList = new ArrayList<>();
         try {
