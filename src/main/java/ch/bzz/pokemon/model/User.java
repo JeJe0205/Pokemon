@@ -3,15 +3,9 @@ package ch.bzz.pokemon.model;
 public class User {
     private String userUUID;
     private String username;
-    private String password;
+    private String passwort;
     private String role;
 
-    /**
-     * default constructor
-     */
-    public User(){
-        setRole("guest");
-    }
 
     /**
      * gets userUUID
@@ -59,18 +53,18 @@ public class User {
      * @return value of password
      */
 
-    public String getPassword() {
-        return password;
+    public String getPasswort() {
+        return passwort;
     }
 
     /**
      * sets password
      *
-     * @param password the value to set
+     * @param passwort the value to set
      */
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPasswort(String passwort) {
+        this.passwort = passwort;
     }
 
     /**

@@ -18,7 +18,7 @@ public class UserData {
         List<User> userList = readJson();
 
         for (User entry: userList){
-            if (entry.getUsername().equals(username) && entry.getPassword().equals(passwort)){
+            if (entry.getUsername().equals(username) && entry.getPasswort().equals(passwort)){
                 user = entry;
             }
 

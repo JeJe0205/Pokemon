@@ -53,16 +53,7 @@ public class UserService {
     @Path("logout")
     @Produces(MediaType.TEXT_PLAIN)
     public Response logout(){
-        NewCookie cookie = new NewCookie(
-                "userRole",
-                "guest",
-                "/",
-                "",
-                "Login-Cookie",
-                1,
-                false
-
-        );
+        NewCookie cookie = new NewCookie("userRole", "","/", null, null, 0, false);
         Response response = Response
                 .status(200)
                 .entity("")
