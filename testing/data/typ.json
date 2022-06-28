@@ -1,14 +1,7 @@
-[
-  {
-    "typUUID": "ID-8",
-    "typ": "Feuer"
-  },
-  {
-    "typUUID": "ID-9",
-    "typ": "Wasser"
-  },
-  {
-    "typUUID": "ID-10",
-    "typ": "Pflanze"
-  }
-]
+[ {
+  "typ" : "Wasser",
+  "typUUID" : "ID-9"
+}, {
+  "typ" : "Pflanze",
+  "typUUID" : "ID-10"
+} ]

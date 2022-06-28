@@ -1,0 +1,20 @@
+[
+  {
+    "userUUID" : "12345",
+    "username" : "admin",
+    "role" : "admin",
+    "passwort" : "admin"
+  },
+  {
+    "userUUID" : "6789",
+    "username" : "user",
+    "role" : "user",
+    "passwort" : "user"
+  },
+  {
+    "userUUID" : "123443",
+    "username" : "guest",
+    "role" : "guest",
+    "passwort" : "guest"
+  }
+]

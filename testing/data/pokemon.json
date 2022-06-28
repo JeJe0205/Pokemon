@@ -1,12 +1,4 @@
-[ 
-{
-  "pokemonUUID" : "ID-1",
-  "name" : "Bisasam",
-  "groesse" : 1.0,
-  "typUUID" : "ID-10",
-  "trainerUUID" : "ID-1"
-},
-{
+[ {
   "pokemonUUID" : "ID-2",
   "name" : "Bisaknosp",
   "groesse" : 1.0,

@@ -15,31 +15,81 @@
         audio.play();
     </script>
 </head>
-<link>
+
+
+<body>
+<span><a href="./pokemon.html">Pokemon</a></span>
+<span><a href="./typ.html">Typ</a></span>
+<span><a href="./trainer.html">Trainer</a></span>
+<span id="logOnOff"><a href="./index.html">Abmelden</a></a></span>
 <h1>Programm Pokémon von Jenith Jeyaranjan</h1>
+
+
+<link>
+<p>Test Methodem</p>
+<a href="http://localhost:8080/Pokemon-1.0/resource/test/test">Test</a><br>
+<a href="http://localhost:8080/Pokemon-1.0/resource/test/restore">Restore</a><br>
 <p>List Methoden</p>
 <a href="http://localhost:8080/Pokemon-1.0/resource/pokemon/list">List of all Pokemons</a><br>
 <a href="http://localhost:8080/Pokemon-1.0/resource/typ/list">List of all Types</a><br>
 <a href="http://localhost:8080/Pokemon-1.0/resource/trainer/list">List of all Trainers</a><br>
 <p>Read Methoden</p>
-<a href="http://localhost:8080/Pokemon-1.0/resource/pokemon/read?id=ID-1">Read Pokemon by ID</a><br>
-<a href="http://localhost:8080/Pokemon-1.0/resource/typ/read?id=ID-8">Read Typ by ID</a><br>
-<a href="http://localhost:8080/Pokemon-1.0/resource/trainer/read?id=ID-1">Read Trainer by ID</a><br>
-<p>Create Methoden</p>
-<a href="http://localhost:8080/Pokemon-1.0/resource/pokemon/create?id=ID-1">Create Pokemon by ID</a><br>
-<a href="http://localhost:8080/Pokemon-1.0/resource/typ/create?id=ID-8">Create Typ by ID</a><br>
-<a href="http://localhost:8080/Pokemon-1.0/resource/trainer/create?id=ID-1">Create Trainer by ID</a><br>
-<p>Update Methoden</p>
-<a href="http://localhost:8080/Pokemon-1.0/resource/pokemon/update?id=ID-1">Update Pokemon by ID</a><br>
-<a href="http://localhost:8080/Pokemon-1.0/resource/typ/update?id=ID-8">Update Typ by ID</a><br>
-<a href="http://localhost:8080/Pokemon-1.0/resource/trainer/update?id=ID-1">Update Trainer by ID</a><br>
+<a href="http://localhost:8080/Pokemon-1.0/resource/pokemon/read?uuid=ID-1">Read Pokemon by UUID</a><br>
+<a href="http://localhost:8080/Pokemon-1.0/resource/typ/read?uuid=ID-8">Read Typ by UUID</a><br>
+<a href="http://localhost:8080/Pokemon-1.0/resource/trainer/read?uuid=ID-1">Read Trainer by UUID</a><br>
 <p>Delete Methoden</p>
-<a href="http://localhost:8080/Pokemon-1.0/resource/pokemon/delete?id=ID-1">Delete Pokemon by ID</a><br>
-<a href="http://localhost:8080/Pokemon-1.0/resource/typ/delete?id=ID-8">Delete Typ by ID</a><br>
-<a href="http://localhost:8080/Pokemon-1.0/resource/trainer/delete?id=ID-1">Delete Trainer by ID</a><br>
-<p>Test Methodem</p>
-<a href="http://localhost:8080/Pokemon-1.0/resource/test/test">Test</a><br>
-<a href="http://localhost:8080/Pokemon-1.0/resource/test/restore">Restore</a><br>
-<body>
+<a href="http://localhost:8080/Pokemon-1.0/resource/pokemon/delete?uuid=ID-1">Delete Pokemon by UUID</a><br>
+<a href="http://localhost:8080/Pokemon-1.0/resource/typ/delete?uuid=ID-8">Delete Typ by UUID</a><br>
+<a href="http://localhost:8080/Pokemon-1.0/resource/trainer/delete?uuid=ID-1">Delete Trainer by UUID</a><br>
+<p>Create Methoden</p>
+<a href="http://localhost:8080/Pokemon-1.0/resource/pokemon/create?uuid=ID-1">Create Pokemon by UUID</a><br>
+<a href="http://localhost:8080/Pokemon-1.0/resource/typ/create?uuid=ID-8">Create Typ by UUID</a><br>
+<a href="http://localhost:8080/Pokemon-1.0/resource/trainer/create?uuid=ID-1">Create Trainer by UUID</a><br>
+<p>Update Methoden</p>
+<a href="http://localhost:8080/Pokemon-1.0/resource/pokemon/update?uuid=ID-1">Update Pokemon by UUID</a><br>
+<a href="http://localhost:8080/Pokemon-1.0/resource/typ/update?uuid=ID-8">Update Typ by UUID</a><br>
+<a href="http://localhost:8080/Pokemon-1.0/resource/trainer/update?uuid=ID-1">Update Trainer by UUID</a><br>
+
 </body>
 </html>
+
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="de">
+<head>
+
+    <title>Anmeldung</title>
+    <script src="./js/login.js"></script>
+</head>
+<body>
+<nav id="nav">
+    <span><a href="./bookshelf.html">Bücher</a></span>
+    <span><a href="./publisherlist.html">Verlage</a></span>
+    <span><a href="./authorlist.html">Autoren</a></span>
+    <span id="logOnOff"><a href="./index.html">Abmelden</a></a></span>
+    <span id="message" style="color: red;"></span>
+</nav>
+<h3>Anmeldung</h3>
+<form id="loginForm">
+    <table>
+        <tr>
+            <td><label for="username">Benutzername</label></td>
+            <td><input id="username" name="username" type="text"/>
+        </tr>
+        <tr>
+            <td><label for="password">Password</label></td>
+            <td><input id="password" name="password" type="password"/>
+        </tr>
+        <tr>
+            <td>
+                <button id="login" type="submit">Anmelden</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html> -->

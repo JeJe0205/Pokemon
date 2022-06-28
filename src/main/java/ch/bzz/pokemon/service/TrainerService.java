@@ -1,6 +1,7 @@
 package ch.bzz.pokemon.service;
 
 import ch.bzz.pokemon.data.DataHandler;
+import ch.bzz.pokemon.model.Pokemon;
 import ch.bzz.pokemon.model.Trainer;
 import com.sun.xml.internal.bind.v2.model.core.ID;
 
@@ -20,12 +21,22 @@ public class TrainerService {  /**
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listTrainers(){
-        List<Trainer> trainerList = DataHandler.readAllTrainers();
-        return Response
-                .status(200)
-                .entity(trainerList)
-                .build();
+    public Response listTrainers(
+            @CookieParam("userRole") String userRole
+    ){
+        {
+            int httpsStatus = 0;
+            if (userRole == null || userRole.equals("guest")){
+                httpsStatus = 403;
+            }else if (userRole.equals("admin") || userRole.equals("user")) {
+                httpsStatus = 200;
+                List<Trainer> trainerList = DataHandler.readAllTrainers();
+            }
+            return Response
+                    .status(200)
+                    .entity(httpsStatus)
+                    .build();
+        }
     }
     /**
      * reads trainer by ID
@@ -36,50 +47,63 @@ public class TrainerService {  /**
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
     public Response readTrainer(
-            @QueryParam("uuid") String trainerUUID
+            @QueryParam("uuid") String trainerUUID,
+            @CookieParam("userRole") String userRole
     ){
-        Trainer trainer = DataHandler.readTrainerByUUID(trainerUUID);
-        int httpsStatus;
-        if (trainer == null){
-            httpsStatus = 404;
-        }else {
-            httpsStatus = 288;
+        int httpsStatus = 0;
+        if (userRole == null || userRole.equals("guest")){
+            httpsStatus = 403;
+        }else if (userRole.equals("admin") || userRole.equals("user"))  {
+            httpsStatus = 200;
+            Trainer trainer = DataHandler.readTrainerByUUID(trainerUUID);
         }
         return Response
-                .status(httpsStatus)
-                .entity(trainer)
+                .status(200)
+                .entity(httpsStatus)
                 .build();
     }
 
     /**
-     *
-     * @return Response
+     * Creates a Trainer by UUID
+     * @return response
      */
     @POST
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertTrainer(
-            @Valid @BeanParam Trainer trainer
+            @Valid @BeanParam Trainer trainer,
+            @CookieParam("userRole") String userRole
           
     ){
-        trainer.setTrainerUUID(UUID.randomUUID().toString());
-        DataHandler.insertTrainer(trainer);
+        int httpsStatus;
+        if (userRole == null || !userRole.equals("admin")){
+            httpsStatus = 403;
+        }else {
+            httpsStatus = 200;
+            trainer.setTrainerUUID(UUID.randomUUID().toString());
+            DataHandler.insertTrainer(trainer);
+        }
         return Response
                 .status(200)
-                .entity("")
+                .entity(httpsStatus)
                 .build();
     }
 
+
     /**
-     *
+     * updates a trainer by UUID
      * @return Response
      */
     @POST
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateTrainer(
-            @Valid @BeanParam Trainer trainer
+            @Valid @BeanParam Trainer trainer,
+            @CookieParam("userRole") String userRole
     ){
+        if (userRole == null || !userRole.equals("admin")) {
+            return Response.status(403).entity("").build();
+        }
         int httpStatus = 200;
         Trainer oldTrainer = DataHandler.readTrainerByUUID(trainer.getTrainerUUID());
         if (oldTrainer != null){
@@ -107,8 +131,12 @@ public class TrainerService {  /**
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteTrainer(
-            @QueryParam("uuid") String trainerUUID
+            @QueryParam("uuid") String trainerUUID,
+            @CookieParam("userRole") String userRole
     ){
+        if (userRole == null || !userRole.equals("admin")) {
+            return Response.status(403).entity("").build();
+        }
         int httpStatus = 200;
         if (!DataHandler.deleteTrainer(trainerUUID)){
             httpStatus = 410;
