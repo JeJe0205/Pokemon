@@ -34,9 +34,11 @@ function sendLogoff(){
 
         })
         .done(function (){
-            window.location.href = "./index.html";
+            window.location.href = "./logout.html";
         })
         .fail(function (xhr, status, errorThrown){
 
         })
-}
+}3
+
+
